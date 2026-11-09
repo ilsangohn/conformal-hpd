@@ -100,7 +100,7 @@ n_test = info[seeds[0]]["n_test"]
 ext_lp = ext_dir is not None or any(info[s_].get("tune_grid", "sim") == "ext" for s_ in seeds)
 grid_note = ("" if not ext_lp else
              " The bandwidths of the LP and of \\cref{alg:local} are chosen from grids extended below those of the simulations.")
-tex = r"""\begin{table}[!htbp]
+tex = r"""\begin{table}[!t]
 \caption{Bike-sharing demand: mean $\pm$ standard error over """ + f"{len(seeds)}" + r""" random splits; the sampling floor of the mean
 group-coverage deviation is about $""" + f"{10 * floor:.2f}" + r"""$ on the $\times10$ scale. Columns marked ($\times10$) report ten times the value. Areas are in units of log-counts squared.""" + grid_note + r"""}\label{tab:bike}
 \centering\small

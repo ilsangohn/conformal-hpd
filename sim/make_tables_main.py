@@ -65,7 +65,7 @@ def reps(keys, model=True):
 nrep = reps(list(COUNTS))
 
 # ---------------- main text: paired differences
-L = ["\\begin{table}[!htbp]",
+L = ["\\begin{table}[!t]",
      f"\\caption{{Region-averaged conditional coverage error ($\\times100$) of one-stage calibration and the paired "
      f"difference \\cref{{alg:local}} $-$ one-stage, mean $\\pm$ standard error over {nrep}. Bold: "
      f"more than two standard errors from zero.}}\\label{{tab:paired}}",
@@ -91,7 +91,7 @@ open("tables/main_paired.tex", "w").write("\n".join(L) + "\n")
 # ---------------- appendix: all methods, one table per model with the blocks d_Y = 2 and d_Y = 5 stacked
 for name, disp in MODELS:
     C = {d: cell(runs, name, d) for d in DYS}
-    L = ["\\begin{table}[!htbp]",
+    L = ["\\begin{table}[!t]",
          f"\\caption{{{disp[0].upper() + disp[1:]} model: marginal coverage, region-averaged conditional coverage error "
          f"($\\times100$), shape loss $\\cS^\\circ$ relative to $\\Leb(\\Cstar)$, averaged over the evaluation covariates, "
          f"and the volume ratio $\\sum_j\\Leb(\\hC(X_j))/\\sum_j\\Leb(\\Cstar(X_j))$ over the random covariates $X_j$ of "
@@ -119,7 +119,7 @@ for name, disp in MODELS:
     open(f"tables/main_{name}.tex", "w").write("\n".join(L) + "\n")
 
 # ---------------- appendix: same fit
-L = ["\\begin{table}[!htbp]",
+L = ["\\begin{table}[!t]",
      f"\\caption{{The same density fit with one-stage calibration and with \\cref{{alg:local}}: region-averaged "
      f"conditional coverage error ($\\times100$) and shape loss $\\cS^\\circ$ relative to $\\Leb(\\Cstar)$ of one-stage "
      f"calibration with the density fitted on all $4000$ fitting points (all), and of one-stage calibration (one) "
