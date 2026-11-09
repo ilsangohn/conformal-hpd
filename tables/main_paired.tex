@@ -1,0 +1,20 @@
+\begin{table}[!htbp]
+\caption{Region-averaged conditional coverage error ($\times100$) of one-stage calibration and the paired difference \cref{alg:local} $-$ one-stage, mean $\pm$ standard error over twenty replications. Bold: more than two standard errors from zero.}\label{tab:paired}
+\centering\small
+\begin{tabular}{llcccccc}
+\toprule
+ & & \multicolumn{2}{c}{NN} & \multicolumn{2}{c}{LP} & \multicolumn{2}{c}{partition}\\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}
+model & $d_Y$ & one-stage & difference & one-stage & difference & one-stage & difference\\
+\midrule
+Gaussian & $2$ & $1.62${\scriptsize${}\pm0.14$} & {\boldmath$0.77${\scriptsize${}\pm0.12$}} & $2.21${\scriptsize${}\pm0.10$} & $0.08${\scriptsize${}\pm0.15$} & $3.65${\scriptsize${}\pm0.08$} & {\boldmath$-1.36${\scriptsize${}\pm0.13$}}\\
+ & $5$ & $1.67${\scriptsize${}\pm0.08$} & {\boldmath$1.27${\scriptsize${}\pm0.15$}} & $3.78${\scriptsize${}\pm0.25$} & {\boldmath$-0.94${\scriptsize${}\pm0.27$}} & $5.99${\scriptsize${}\pm0.09$} & {\boldmath$-3.22${\scriptsize${}\pm0.12$}}\\
+\addlinespace[2pt]
+multimodal & $2$ & $2.76${\scriptsize${}\pm0.19$} & $0.42${\scriptsize${}\pm0.24$} & $5.28${\scriptsize${}\pm0.11$} & {\boldmath$-2.25${\scriptsize${}\pm0.20$}} & $5.86${\scriptsize${}\pm0.12$} & {\boldmath$-2.93${\scriptsize${}\pm0.18$}}\\
+ & $5$ & $5.23${\scriptsize${}\pm0.37$} & {\boldmath$-2.74${\scriptsize${}\pm0.35$}} & $7.06${\scriptsize${}\pm0.13$} & {\boldmath$-4.29${\scriptsize${}\pm0.18$}} & $5.99${\scriptsize${}\pm0.10$} & {\boldmath$-3.35${\scriptsize${}\pm0.17$}}\\
+\addlinespace[2pt]
+manifold & $2$ & $1.66${\scriptsize${}\pm0.15$} & {\boldmath$0.94${\scriptsize${}\pm0.14$}} & $3.30${\scriptsize${}\pm0.06$} & {\boldmath$-0.83${\scriptsize${}\pm0.12$}} & $3.92${\scriptsize${}\pm0.04$} & {\boldmath$-1.45${\scriptsize${}\pm0.11$}}\\
+ & $5$ & $4.90${\scriptsize${}\pm0.45$} & {\boldmath$-2.29${\scriptsize${}\pm0.50$}} & $5.49${\scriptsize${}\pm0.08$} & {\boldmath$-2.98${\scriptsize${}\pm0.10$}} & $4.12${\scriptsize${}\pm0.07$} & {\boldmath$-1.60${\scriptsize${}\pm0.11$}}\\
+\bottomrule
+\end{tabular}
+\end{table}

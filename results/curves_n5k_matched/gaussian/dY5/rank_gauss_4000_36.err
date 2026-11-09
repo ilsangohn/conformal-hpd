@@ -1,0 +1,38 @@
+[   37.0s] fit full: nn 5.0s, lp 29.2s, {'lp_hx': 0.9, 'lp_hy': 0.95, 'lp_cv': {'0.6,0.2': 1.061253, '0.6,0.3': 0.667233, '0.6,0.45': 0.490946, '0.6,0.65': 0.421924, '0.6,0.95': 0.401007, '0.9,0.2': 0.963873, '0.9,0.3': 0.666254, '0.9,0.45': 0.479273, '0.9,0.65': 0.409529, '0.9,0.95': 0.400696, '1.35,0.2': 0.954397, '1.35,0.3': 0.643073, '1.35,0.45': 0.467035, '1.35,0.65': 0.408441, '1.35,0.95': 0.404707, '2.0,0.2': 0.955585, '2.0,0.3': 0.64054, '2.0,0.45': 0.465965, '2.0,0.65': 0.412246, '2.0,0.95': 0.408215, '3.0,0.2': 0.954853, '3.0,0.3': 0.64194, '3.0,0.45': 0.4658, '3.0,0.65': 0.412565, '3.0,0.95': 0.411648}, 'nn_epochs': 27, 'lp_edge': ['interior', 'high']}
+[   47.1s] HPD-NN done
+[ 2695.5s] HPD-LP done
+[ 2711.4s] CELL done
+[ 2732.9s] fit A: nn 2.1s, lp 19.4s, {'lp_hx': 0.9, 'lp_hy': 0.95, 'lp_cv': {'0.6,0.2': 1.192205, '0.6,0.3': 0.742853, '0.6,0.45': 0.549838, '0.6,0.65': 0.449315, '0.6,0.95': 0.409532, '0.9,0.2': 1.103315, '0.9,0.3': 0.710485, '0.9,0.45': 0.500235, '0.9,0.65': 0.419469, '0.9,0.95': 0.403695, '1.35,0.2': 1.085192, '1.35,0.3': 0.687726, '1.35,0.45': 0.479939, '1.35,0.65': 0.414827, '1.35,0.95': 0.412914, '2.0,0.2': 1.084338, '2.0,0.3': 0.689222, '2.0,0.45': 0.478534, '2.0,0.65': 0.416913, '2.0,0.95': 0.418589, '3.0,0.2': 1.084321, '3.0,0.3': 0.68708, '3.0,0.45': 0.477702, '3.0,0.65': 0.417022, '3.0,0.95': 0.420504}, 'nn_epochs': 22, 'lp_edge': ['interior', 'high']}
+[ 2740.7s] HPD-NN-RANK done
+[ 2740.9s] HPD-NN-RANKFIX done
+[ 2741.1s] HPD-NN-RANKIND done
+[ 2741.3s] HPD-NN-RANKISO done
+[ 3914.5s] HPD-LP-RANK done
+[ 3914.7s] HPD-LP-RANKFIX done
+[ 3914.9s] HPD-LP-RANKIND done
+[ 3915.1s] HPD-LP-RANKISO done
+[ 3927.5s] CELL-RANK done
+[ 3927.8s] CELL-RANKFIX done
+[ 3928.0s] CELL-RANKIND done
+[ 3928.2s] CELL-RANKISO done
+# stage_times {"dens_ev": 1208.5, "evaluation": 1.8, "fit_cell": 0.1, "fit_lp": 48.6, "fit_nn": 7.1, "hpd_mc": 1983.0, "proposal": 1.9, "rank": 674.1}
+# total 3928.2s
+     3929.10 real      3304.84 user       622.45 sys
+          3905847296  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              533451  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   5  voluntary context switches
+               48604  involuntary context switches
+      44098782528288  instructions retired
+      11979584447537  cycles elapsed
+           950078248  peak memory footprint
+# exit=0 lines=16

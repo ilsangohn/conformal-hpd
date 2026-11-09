@@ -1,0 +1,38 @@
+[   35.5s] fit full: nn 4.5s, lp 28.0s, {'lp_hx': 0.6, 'lp_hy': 0.95, 'lp_cv': {'0.6,0.2': 1.091057, '0.6,0.3': 0.645974, '0.6,0.45': 0.482009, '0.6,0.65': 0.423739, '0.6,0.95': 0.403263, '0.9,0.2': 0.955853, '0.9,0.3': 0.643445, '0.9,0.45': 0.454227, '0.9,0.65': 0.409523, '0.9,0.95': 0.403995, '1.35,0.2': 0.944638, '1.35,0.3': 0.621799, '1.35,0.45': 0.452704, '1.35,0.65': 0.411117, '1.35,0.95': 0.410978, '2.0,0.2': 0.945541, '2.0,0.3': 0.621461, '2.0,0.45': 0.452389, '2.0,0.65': 0.411432, '2.0,0.95': 0.414614, '3.0,0.2': 0.945903, '3.0,0.3': 0.621862, '3.0,0.45': 0.452902, '3.0,0.65': 0.41062, '3.0,0.95': 0.416425}, 'nn_epochs': 22, 'lp_edge': ['low', 'high']}
+[   45.2s] HPD-NN done
+[ 2006.0s] HPD-LP done
+[ 2022.5s] CELL done
+[ 2042.5s] fit A: nn 1.9s, lp 18.1s, {'lp_hx': 0.6, 'lp_hy': 0.95, 'lp_cv': {'0.6,0.2': 1.215882, '0.6,0.3': 0.710719, '0.6,0.45': 0.519483, '0.6,0.65': 0.42347, '0.6,0.95': 0.405238, '0.9,0.2': 1.031599, '0.9,0.3': 0.689424, '0.9,0.45': 0.486052, '0.9,0.65': 0.413716, '0.9,0.95': 0.410005, '1.35,0.2': 1.016082, '1.35,0.3': 0.674703, '1.35,0.45': 0.480269, '1.35,0.65': 0.414742, '1.35,0.95': 0.41407, '2.0,0.2': 1.015498, '2.0,0.3': 0.666385, '2.0,0.45': 0.480923, '2.0,0.65': 0.417745, '2.0,0.95': 0.416914, '3.0,0.2': 1.015562, '3.0,0.3': 0.663716, '3.0,0.45': 0.482206, '3.0,0.65': 0.418837, '3.0,0.95': 0.418958}, 'nn_epochs': 18, 'lp_edge': ['low', 'high']}
+[ 2050.4s] HPD-NN-RANK done
+[ 2050.7s] HPD-NN-RANKFIX done
+[ 2050.9s] HPD-NN-RANKIND done
+[ 2051.1s] HPD-NN-RANKISO done
+[ 2887.9s] HPD-LP-RANK done
+[ 2888.1s] HPD-LP-RANKFIX done
+[ 2888.3s] HPD-LP-RANKIND done
+[ 2888.4s] HPD-LP-RANKISO done
+[ 2902.0s] CELL-RANK done
+[ 2902.2s] CELL-RANKFIX done
+[ 2902.4s] CELL-RANKIND done
+[ 2902.6s] CELL-RANKISO done
+# stage_times {"dens_ev": 987.6, "evaluation": 1.6, "fit_cell": 0.2, "fit_lp": 46.1, "fit_nn": 6.4, "hpd_mc": 1417.7, "proposal": 2.0, "rank": 437.8}
+# total 2902.6s
+     2903.59 real      2379.15 user       522.90 sys
+          4005363712  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              529006  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   1  voluntary context switches
+               34615  involuntary context switches
+      32040744590054  instructions retired
+       8858492015024  cycles elapsed
+           953617384  peak memory footprint
+# exit=0 lines=16

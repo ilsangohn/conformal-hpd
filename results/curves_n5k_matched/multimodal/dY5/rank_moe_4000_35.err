@@ -1,0 +1,38 @@
+[   16.6s] fit full: nn 5.3s, lp 6.9s, {'lp_hx': 3.0, 'lp_hy': 0.65, 'lp_cv': {'0.6,0.2': 0.38, '0.6,0.3': 0.267737, '0.6,0.45': 0.110115, '0.6,0.65': 0.081835, '0.6,0.95': 0.084728, '0.9,0.2': 0.352148, '0.9,0.3': 0.203333, '0.9,0.45': 0.108091, '0.9,0.65': 0.080163, '0.9,0.95': 0.083902, '1.35,0.2': 0.351096, '1.35,0.3': 0.197502, '1.35,0.45': 0.107797, '1.35,0.65': 0.076589, '1.35,0.95': 0.084173, '2.0,0.2': 0.350929, '2.0,0.3': 0.197812, '2.0,0.45': 0.106286, '2.0,0.65': 0.07624, '2.0,0.95': 0.08441, '3.0,0.2': 0.350871, '3.0,0.3': 0.19799, '3.0,0.45': 0.106568, '3.0,0.65': 0.076167, '3.0,0.95': 0.084533}, 'nn_epochs': 29, 'lp_edge': ['high', 'interior']}
+[   26.3s] HPD-NN done
+[  793.5s] HPD-LP done
+[  808.2s] CELL done
+[  817.2s] fit A: nn 4.3s, lp 4.7s, {'lp_hx': 2.0, 'lp_hy': 0.65, 'lp_cv': {'0.6,0.2': 0.341688, '0.6,0.3': 0.250683, '0.6,0.45': 0.130882, '0.6,0.65': 0.095899, '0.6,0.95': 0.094123, '0.9,0.2': 0.329782, '0.9,0.3': 0.222467, '0.9,0.45': 0.11282, '0.9,0.65': 0.084957, '0.9,0.95': 0.09006, '1.35,0.2': 0.332525, '1.35,0.3': 0.226463, '1.35,0.45': 0.108806, '1.35,0.65': 0.080662, '1.35,0.95': 0.086837, '2.0,0.2': 0.33254, '2.0,0.3': 0.227152, '2.0,0.45': 0.10898, '2.0,0.65': 0.080619, '2.0,0.95': 0.086632, '3.0,0.2': 0.332557, '3.0,0.3': 0.227471, '3.0,0.45': 0.109111, '3.0,0.65': 0.08067, '3.0,0.95': 0.086682}, 'nn_epochs': 47, 'lp_edge': ['interior', 'interior']}
+[  825.3s] HPD-NN-RANK done
+[  825.5s] HPD-NN-RANKFIX done
+[  825.7s] HPD-NN-RANKIND done
+[  825.9s] HPD-NN-RANKISO done
+[ 1177.5s] HPD-LP-RANK done
+[ 1177.7s] HPD-LP-RANKFIX done
+[ 1177.9s] HPD-LP-RANKIND done
+[ 1178.1s] HPD-LP-RANKISO done
+[ 1191.3s] CELL-RANK done
+[ 1191.5s] CELL-RANKFIX done
+[ 1191.7s] CELL-RANKIND done
+[ 1191.9s] CELL-RANKISO done
+# stage_times {"dens_ev": 415.6, "evaluation": 3.3, "fit_cell": 0.2, "fit_lp": 11.6, "fit_nn": 9.6, "hpd_mc": 557.4, "proposal": 1.9, "rank": 189.4}
+# total 1191.9s
+     1192.95 real       989.40 user       202.92 sys
+          3505897472  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              260357  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+               13753  involuntary context switches
+      13425431106657  instructions retired
+       3631461254562  cycles elapsed
+          1006438968  peak memory footprint
+# exit=0 lines=16

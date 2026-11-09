@@ -1,0 +1,38 @@
+[   32.2s] fit full: nn 3.6s, lp 27.4s, {'lp_hx': 1.35, 'lp_hy': 0.45, 'lp_cv': {'0.6,0.2': 0.434571, '0.6,0.3': 0.411743, '0.6,0.45': 0.405187, '0.6,0.65': 0.405962, '0.9,0.2': 0.416149, '0.9,0.3': 0.40561, '0.9,0.45': 0.404221, '0.9,0.65': 0.405115, '1.35,0.2': 0.414879, '1.35,0.3': 0.405244, '1.35,0.45': 0.40422, '1.35,0.65': 0.405387, '2.0,0.2': 0.414961, '2.0,0.3': 0.405453, '2.0,0.45': 0.404364, '2.0,0.65': 0.405618}, 'nn_epochs': 16, 'lp_edge': ['interior', 'interior']}
+[   38.6s] HPD-NN done
+[  360.9s] HPD-LP done
+[  373.4s] CELL done
+[  394.1s] fit A: nn 2.2s, lp 18.5s, {'lp_hx': 1.35, 'lp_hy': 0.45, 'lp_cv': {'0.6,0.2': 0.446011, '0.6,0.3': 0.423163, '0.6,0.45': 0.409105, '0.6,0.65': 0.408158, '0.9,0.2': 0.426507, '0.9,0.3': 0.415973, '0.9,0.45': 0.408207, '0.9,0.65': 0.407516, '1.35,0.2': 0.421676, '1.35,0.3': 0.414546, '1.35,0.45': 0.407452, '1.35,0.65': 0.407798, '2.0,0.2': 0.422864, '2.0,0.3': 0.414387, '2.0,0.45': 0.407583, '2.0,0.65': 0.407997}, 'nn_epochs': 18, 'lp_edge': ['interior', 'interior']}
+[  402.4s] HPD-NN-RANK done
+[  402.7s] HPD-NN-RANKFIX done
+[  402.9s] HPD-NN-RANKIND done
+[  403.1s] HPD-NN-RANKISO done
+[  724.9s] HPD-LP-RANK done
+[  725.2s] HPD-LP-RANKFIX done
+[  725.4s] HPD-LP-RANKIND done
+[  725.6s] HPD-LP-RANKISO done
+[  737.4s] CELL-RANK done
+[  737.6s] CELL-RANKFIX done
+[  737.9s] CELL-RANKIND done
+[  738.2s] CELL-RANKISO done
+# stage_times {"dens_ev": 292.5, "evaluation": 1.5, "fit_cell": 0.1, "fit_lp": 45.8, "fit_nn": 5.8, "hpd_mc": 176.0, "proposal": 0.7, "rank": 212.5}
+# total 738.2s
+      739.22 real       570.77 user       167.23 sys
+          3375923200  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              599003  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+               12961  involuntary context switches
+       7677441817788  instructions retired
+       2242725710836  cycles elapsed
+           956140496  peak memory footprint
+# exit=0 lines=16

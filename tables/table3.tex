@@ -1,0 +1,34 @@
+\begin{table}[!htbp]
+\caption{Bike-sharing demand: mean $\pm$ standard error over 10 random splits; the sampling floor of the mean
+group-coverage deviation is about $0.14$ on the $\times10$ scale. Columns marked ($\times10$) report ten times the value. Areas are in units of log-counts squared. The bandwidths of the LP and of \cref{alg:local} are chosen from grids extended below those of the simulations.}\label{tab:bike}
+\centering\small
+\resizebox{\ifdim\width>\textwidth\textwidth\else\width\fi}{!}{%
+\begin{tabular}{llccccc}
+\toprule
+\multicolumn{2}{l}{method} & marginal coverage & \multicolumn{2}{c}{$|$group coverage$-0.9|$ ($\times10$)} & area & area relative\\
+ & & & mean & max & & to NN, one-stage\\
+\midrule
+NN & one-stage & $0.893${\scriptsize${}\pm0.002$} & $0.211${\scriptsize${}\pm0.019$} & $0.631${\scriptsize${}\pm0.069$} & $4.280${\scriptsize${}\pm0.038$} & $1.000${\scriptsize${}\pm0.000$}\\
+ & \cref{alg:local} & $0.896${\scriptsize${}\pm0.003$} & $0.339${\scriptsize${}\pm0.012$} & $0.823${\scriptsize${}\pm0.027$} & $5.210${\scriptsize${}\pm0.093$} & $1.218${\scriptsize${}\pm0.024$}\\
+ & two-stage (own covariate) & $0.896${\scriptsize${}\pm0.002$} & $0.202${\scriptsize${}\pm0.013$} & $0.452${\scriptsize${}\pm0.038$} & $4.389${\scriptsize${}\pm0.055$} & $1.026${\scriptsize${}\pm0.014$}\\
+ & two-stage (quantile) & $0.897${\scriptsize${}\pm0.002$} & $0.203${\scriptsize${}\pm0.014$} & $0.485${\scriptsize${}\pm0.042$} & $4.395${\scriptsize${}\pm0.054$} & $1.027${\scriptsize${}\pm0.013$}\\
+\addlinespace[2pt]
+LP & one-stage & $0.895${\scriptsize${}\pm0.003$} & $0.363${\scriptsize${}\pm0.023$} & $0.938${\scriptsize${}\pm0.105$} & $5.374${\scriptsize${}\pm0.100$} & $1.256${\scriptsize${}\pm0.027$}\\
+ & \cref{alg:local} & $0.897${\scriptsize${}\pm0.003$} & $0.247${\scriptsize${}\pm0.014$} & $0.564${\scriptsize${}\pm0.028$} & $5.631${\scriptsize${}\pm0.086$} & $1.316${\scriptsize${}\pm0.022$}\\
+ & two-stage (own covariate) & $0.897${\scriptsize${}\pm0.003$} & $0.216${\scriptsize${}\pm0.011$} & $0.554${\scriptsize${}\pm0.038$} & $5.613${\scriptsize${}\pm0.087$} & $1.312${\scriptsize${}\pm0.023$}\\
+ & two-stage (quantile) & $0.899${\scriptsize${}\pm0.003$} & $0.186${\scriptsize${}\pm0.015$} & $0.447${\scriptsize${}\pm0.042$} & $5.886${\scriptsize${}\pm0.184$} & $1.375${\scriptsize${}\pm0.042$}\\
+\addlinespace[2pt]
+partition & one-stage & $0.895${\scriptsize${}\pm0.003$} & $0.304${\scriptsize${}\pm0.020$} & $0.684${\scriptsize${}\pm0.053$} & $6.473${\scriptsize${}\pm0.114$} & $1.513${\scriptsize${}\pm0.029$}\\
+ & \cref{alg:local} & $0.896${\scriptsize${}\pm0.003$} & $0.249${\scriptsize${}\pm0.011$} & $0.640${\scriptsize${}\pm0.047$} & $7.171${\scriptsize${}\pm0.085$} & $1.677${\scriptsize${}\pm0.025$}\\
+ & two-stage (own covariate) & $0.896${\scriptsize${}\pm0.003$} & $0.249${\scriptsize${}\pm0.015$} & $0.642${\scriptsize${}\pm0.061$} & $6.809${\scriptsize${}\pm0.100$} & $1.592${\scriptsize${}\pm0.030$}\\
+ & two-stage (quantile) & $0.895${\scriptsize${}\pm0.004$} & $0.232${\scriptsize${}\pm0.010$} & $0.544${\scriptsize${}\pm0.050$} & $7.201${\scriptsize${}\pm0.366$} & $1.684${\scriptsize${}\pm0.087$}\\
+\addlinespace[2pt]
+baselines & CHCDS & $0.893${\scriptsize${}\pm0.002$} & $0.216${\scriptsize${}\pm0.020$} & $0.619${\scriptsize${}\pm0.069$} & $4.242${\scriptsize${}\pm0.045$} & $0.991${\scriptsize${}\pm0.005$}\\
+ & local ellipsoid & $0.896${\scriptsize${}\pm0.002$} & $0.191${\scriptsize${}\pm0.012$} & $0.472${\scriptsize${}\pm0.036$} & $4.703${\scriptsize${}\pm0.031$} & $1.099${\scriptsize${}\pm0.010$}\\
+ & RCP (ellipsoid score) & $0.894${\scriptsize${}\pm0.003$} & $0.191${\scriptsize${}\pm0.013$} & $0.482${\scriptsize${}\pm0.047$} & $4.799${\scriptsize${}\pm0.036$} & $1.122${\scriptsize${}\pm0.013$}\\
+ & PCP & $0.899${\scriptsize${}\pm0.002$} & $0.346${\scriptsize${}\pm0.014$} & $0.881${\scriptsize${}\pm0.037$} & $5.514${\scriptsize${}\pm0.061$} & $1.289${\scriptsize${}\pm0.015$}\\
+ & RCP (PCP score) & $0.897${\scriptsize${}\pm0.002$} & $0.198${\scriptsize${}\pm0.014$} & $0.540${\scriptsize${}\pm0.045$} & $5.621${\scriptsize${}\pm0.048$} & $1.314${\scriptsize${}\pm0.016$}\\
+ & OT-CP & $0.897${\scriptsize${}\pm0.002$} & $0.504${\scriptsize${}\pm0.020$} & $1.799${\scriptsize${}\pm0.104$} & $5.958${\scriptsize${}\pm0.137$} & $1.392${\scriptsize${}\pm0.027$}\\
+\bottomrule
+\end{tabular}}
+\end{table}

@@ -1,0 +1,38 @@
+[   37.0s] fit full: nn 6.5s, lp 27.7s, {'lp_hx': 0.6, 'lp_hy': 0.95, 'lp_cv': {'0.6,0.2': 1.149421, '0.6,0.3': 0.659756, '0.6,0.45': 0.496633, '0.6,0.65': 0.432515, '0.6,0.95': 0.407216, '0.9,0.2': 0.964531, '0.9,0.3': 0.649886, '0.9,0.45': 0.459905, '0.9,0.65': 0.413481, '0.9,0.95': 0.409744, '1.35,0.2': 0.945782, '1.35,0.3': 0.638885, '1.35,0.45': 0.442317, '1.35,0.65': 0.412027, '1.35,0.95': 0.414289, '2.0,0.2': 0.945256, '2.0,0.3': 0.636769, '2.0,0.45': 0.439488, '2.0,0.65': 0.412192, '2.0,0.95': 0.417212, '3.0,0.2': 0.94538, '3.0,0.3': 0.636878, '3.0,0.45': 0.439164, '3.0,0.65': 0.411483, '3.0,0.95': 0.418295}, 'nn_epochs': 42, 'lp_edge': ['low', 'high']}
+[   46.7s] HPD-NN done
+[ 2031.0s] HPD-LP done
+[ 2049.1s] CELL done
+[ 2071.4s] fit A: nn 2.3s, lp 20.0s, {'lp_hx': 0.6, 'lp_hy': 0.95, 'lp_cv': {'0.6,0.2': 1.21676, '0.6,0.3': 0.702122, '0.6,0.45': 0.538372, '0.6,0.65': 0.438043, '0.6,0.95': 0.40724, '0.9,0.2': 1.056493, '0.9,0.3': 0.701317, '0.9,0.45': 0.492332, '0.9,0.65': 0.424933, '0.9,0.95': 0.411708, '1.35,0.2': 1.053573, '1.35,0.3': 0.696882, '1.35,0.45': 0.470609, '1.35,0.65': 0.421774, '1.35,0.95': 0.41905, '2.0,0.2': 1.053143, '2.0,0.3': 0.69825, '2.0,0.45': 0.46944, '2.0,0.65': 0.421809, '2.0,0.95': 0.421765, '3.0,0.2': 1.053291, '3.0,0.3': 0.700167, '3.0,0.45': 0.468252, '3.0,0.65': 0.422278, '3.0,0.95': 0.42398}, 'nn_epochs': 19, 'lp_edge': ['low', 'high']}
+[ 2079.8s] HPD-NN-RANK done
+[ 2080.1s] HPD-NN-RANKFIX done
+[ 2080.3s] HPD-NN-RANKIND done
+[ 2080.6s] HPD-NN-RANKISO done
+[ 3014.9s] HPD-LP-RANK done
+[ 3015.0s] HPD-LP-RANKFIX done
+[ 3015.3s] HPD-LP-RANKIND done
+[ 3015.5s] HPD-LP-RANKISO done
+[ 3029.9s] CELL-RANK done
+[ 3030.2s] CELL-RANKFIX done
+[ 3030.4s] CELL-RANKIND done
+[ 3030.7s] CELL-RANKISO done
+# stage_times {"dens_ev": 1048.4, "evaluation": 1.9, "fit_cell": 0.2, "fit_lp": 47.7, "fit_nn": 8.8, "hpd_mc": 1430.8, "proposal": 1.9, "rank": 487.8}
+# total 3030.7s
+     3031.68 real      2427.29 user       602.68 sys
+          3901718528  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              526224  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+               34180  involuntary context switches
+      32405742894760  instructions retired
+       9230704609400  cycles elapsed
+           973458408  peak memory footprint
+# exit=0 lines=16

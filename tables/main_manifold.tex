@@ -1,0 +1,63 @@
+\begin{table}[!htbp]
+\caption{Manifold model: marginal coverage, region-averaged conditional coverage error ($\times100$), shape loss $\cS^\circ$ relative to $\Leb(\Cstar)$, averaged over the evaluation covariates, and the volume ratio $\sum_j\Leb(\hC(X_j))/\sum_j\Leb(\Cstar(X_j))$ over the random covariates $X_j$ of the marginal coverage; mean $\pm$ standard error over twenty replications.}\label{tab:main-manifold}
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\resizebox{\ifdim\width>\textwidth\textwidth\else\width\fi}{!}{%
+\begin{tabular}{llcccc}
+\toprule
+\multicolumn{2}{l}{method} & marg.\ coverage & cov.\ error & shape loss & volume ratio\\
+\midrule
+\multicolumn{6}{l}{$d_Y=2$}\\
+\addlinespace[2pt]
+\textit{true density} & \textit{one-stage} & $0.899${\scriptsize${}\pm0.002$} & $0.78${\scriptsize${}\pm0.13$} & $5.40\times10^{-8}${\scriptsize${}\pm1.2\times10^{-8}$} & $1.00${\scriptsize${}\pm0.012$}\\
+ & \textit{global threshold} & $0.899${\scriptsize${}\pm0.002$} & $2.10${\scriptsize${}\pm0.10$} & $1.10\times10^{-6}${\scriptsize${}\pm2.9\times10^{-7}$} & $0.969${\scriptsize${}\pm0.014$}\\
+\addlinespace[2pt]
+NN & one-stage & $0.899${\scriptsize${}\pm0.003$} & $1.66${\scriptsize${}\pm0.15$} & $0.0738${\scriptsize${}\pm0.0048$} & $1.04${\scriptsize${}\pm0.020$}\\
+ & \cref{alg:local} & $0.901${\scriptsize${}\pm0.003$} & $2.59${\scriptsize${}\pm0.08$} & $0.0870${\scriptsize${}\pm0.0061$} & $1.09${\scriptsize${}\pm0.015$}\\
+ & two-stage (own covariate) & $0.898${\scriptsize${}\pm0.003$} & $2.02${\scriptsize${}\pm0.16$} & $0.0785${\scriptsize${}\pm0.0054$} & $1.06${\scriptsize${}\pm0.018$}\\
+ & two-stage (quantile) & $0.899${\scriptsize${}\pm0.002$} & $2.11${\scriptsize${}\pm0.17$} & $0.0811${\scriptsize${}\pm0.0055$} & $1.06${\scriptsize${}\pm0.017$}\\
+\addlinespace[2pt]
+LP & one-stage & $0.903${\scriptsize${}\pm0.002$} & $3.30${\scriptsize${}\pm0.06$} & $0.548${\scriptsize${}\pm0.0072$} & $1.15${\scriptsize${}\pm0.014$}\\
+ & \cref{alg:local} & $0.902${\scriptsize${}\pm0.003$} & $2.47${\scriptsize${}\pm0.11$} & $0.385${\scriptsize${}\pm0.018$} & $1.18${\scriptsize${}\pm0.016$}\\
+ & two-stage (own covariate) & $0.901${\scriptsize${}\pm0.002$} & $2.06${\scriptsize${}\pm0.13$} & $0.355${\scriptsize${}\pm0.017$} & $1.18${\scriptsize${}\pm0.017$}\\
+ & two-stage (quantile) & $0.901${\scriptsize${}\pm0.003$} & $2.72${\scriptsize${}\pm0.14$} & $0.386${\scriptsize${}\pm0.019$} & $1.23${\scriptsize${}\pm0.045$}\\
+\addlinespace[2pt]
+partition & one-stage & $0.898${\scriptsize${}\pm0.003$} & $3.92${\scriptsize${}\pm0.04$} & $0.807${\scriptsize${}\pm0.015$} & $1.27${\scriptsize${}\pm0.017$}\\
+ & \cref{alg:local} & $0.904${\scriptsize${}\pm0.002$} & $2.47${\scriptsize${}\pm0.09$} & $0.554${\scriptsize${}\pm0.018$} & $1.26${\scriptsize${}\pm0.014$}\\
+ & two-stage (own covariate) & $0.901${\scriptsize${}\pm0.002$} & $2.77${\scriptsize${}\pm0.09$} & $0.598${\scriptsize${}\pm0.016$} & $1.29${\scriptsize${}\pm0.021$}\\
+ & two-stage (quantile) & $0.902${\scriptsize${}\pm0.002$} & $3.95${\scriptsize${}\pm0.23$} & $0.662${\scriptsize${}\pm0.040$} & $1.73${\scriptsize${}\pm0.17$}\\
+\addlinespace[2pt]
+baselines & CHCDS & $0.899${\scriptsize${}\pm0.003$} & $1.83${\scriptsize${}\pm0.17$} & $0.0701${\scriptsize${}\pm0.0047$} & $1.05${\scriptsize${}\pm0.023$}\\
+ & local ellipsoid & $0.905${\scriptsize${}\pm0.002$} & $7.22${\scriptsize${}\pm0.14$} & $0.0277${\scriptsize${}\pm0.0025$} & $1.28${\scriptsize${}\pm0.015$}\\
+ & RCP (ellipsoid score) & $0.899${\scriptsize${}\pm0.003$} & $4.42${\scriptsize${}\pm0.16$} & $0.999${\scriptsize${}\pm0.072$} & $1.28${\scriptsize${}\pm0.010$}\\
+ & PCP & $0.901${\scriptsize${}\pm0.002$} & $4.42${\scriptsize${}\pm0.15$} & $1.44${\scriptsize${}\pm0.031$} & $1.60${\scriptsize${}\pm0.017$}\\
+ & RCP (PCP score) & $0.900${\scriptsize${}\pm0.002$} & $3.40${\scriptsize${}\pm0.14$} & $1.37${\scriptsize${}\pm0.022$} & $1.56${\scriptsize${}\pm0.016$}\\
+ & OT-CP & $0.904${\scriptsize${}\pm0.002$} & $5.53${\scriptsize${}\pm0.10$} & $1.31${\scriptsize${}\pm0.17$} & $1.51${\scriptsize${}\pm0.073$}\\
+\midrule
+\multicolumn{6}{l}{$d_Y=5$}\\
+\addlinespace[2pt]
+\textit{true density} & \textit{one-stage} & $0.899${\scriptsize${}\pm0.003$} & $1.00${\scriptsize${}\pm0.15$} & $6.32\times10^{-8}${\scriptsize${}\pm3.7\times10^{-8}$} & $1.00${\scriptsize${}\pm0.026$}\\
+ & \textit{global threshold} & $0.899${\scriptsize${}\pm0.003$} & $3.38${\scriptsize${}\pm0.09$} & $3.95\times10^{-4}${\scriptsize${}\pm1.8\times10^{-4}$} & $0.905${\scriptsize${}\pm0.031$}\\
+\addlinespace[2pt]
+NN & one-stage & $0.899${\scriptsize${}\pm0.002$} & $4.90${\scriptsize${}\pm0.45$} & $9.04${\scriptsize${}\pm3.6$} & $1.60${\scriptsize${}\pm0.086$}\\
+ & \cref{alg:local} & $0.904${\scriptsize${}\pm0.003$} & $2.61${\scriptsize${}\pm0.12$} & $3.61${\scriptsize${}\pm1.2$} & $1.18${\scriptsize${}\pm0.028$}\\
+ & two-stage (own covariate) & $0.902${\scriptsize${}\pm0.003$} & $2.79${\scriptsize${}\pm0.17$} & $34.5${\scriptsize${}\pm15$} & $1.21${\scriptsize${}\pm0.032$}\\
+ & two-stage (quantile) & $0.902${\scriptsize${}\pm0.003$} & $3.34${\scriptsize${}\pm0.18$} & $3.40\times10^{4}${\scriptsize${}\pm2.3\times10^{4}$} & $3.55${\scriptsize${}\pm1.1$}\\
+\addlinespace[2pt]
+LP & one-stage & $0.902${\scriptsize${}\pm0.003$} & $5.49${\scriptsize${}\pm0.08$} & $1.18\times10^{4}${\scriptsize${}\pm882$} & $1.94${\scriptsize${}\pm0.077$}\\
+ & \cref{alg:local} & $0.900${\scriptsize${}\pm0.003$} & $2.52${\scriptsize${}\pm0.09$} & $8.80${\scriptsize${}\pm2.3$} & $2.34${\scriptsize${}\pm0.094$}\\
+ & two-stage (own covariate) & $0.899${\scriptsize${}\pm0.003$} & $2.21${\scriptsize${}\pm0.10$} & $18.7${\scriptsize${}\pm3.8$} & $2.18${\scriptsize${}\pm0.13$}\\
+ & two-stage (quantile) & $0.897${\scriptsize${}\pm0.002$} & $3.83${\scriptsize${}\pm0.21$} & $1158${\scriptsize${}\pm420$} & $13.3${\scriptsize${}\pm2.3$}\\
+\addlinespace[2pt]
+partition & one-stage & $0.896${\scriptsize${}\pm0.003$} & $4.12${\scriptsize${}\pm0.07$} & $3256${\scriptsize${}\pm110$} & $1.40${\scriptsize${}\pm0.037$}\\
+ & \cref{alg:local} & $0.904${\scriptsize${}\pm0.003$} & $2.53${\scriptsize${}\pm0.10$} & $9.61${\scriptsize${}\pm1.8$} & $1.69${\scriptsize${}\pm0.047$}\\
+ & two-stage (own covariate) & $0.900${\scriptsize${}\pm0.003$} & $3.15${\scriptsize${}\pm0.11$} & $35.2${\scriptsize${}\pm28$} & $1.72${\scriptsize${}\pm0.045$}\\
+ & two-stage (quantile) & $0.898${\scriptsize${}\pm0.002$} & $4.26${\scriptsize${}\pm0.26$} & $477${\scriptsize${}\pm174$} & $15.8${\scriptsize${}\pm3.4$}\\
+\addlinespace[2pt]
+baselines & CHCDS & $0.899${\scriptsize${}\pm0.003$} & $10.49${\scriptsize${}\pm1.02$} & $1.60\times10^{4}${\scriptsize${}\pm1.6\times10^{4}$} & $59.1${\scriptsize${}\pm10$}\\
+ & local ellipsoid & $0.897${\scriptsize${}\pm0.003$} & $2.78${\scriptsize${}\pm0.09$} & $422${\scriptsize${}\pm26$} & $1.18${\scriptsize${}\pm0.047$}\\
+ & RCP (ellipsoid score) & $0.900${\scriptsize${}\pm0.003$} & $3.09${\scriptsize${}\pm0.16$} & $421${\scriptsize${}\pm208$} & $1.35${\scriptsize${}\pm0.061$}\\
+ & PCP & $0.899${\scriptsize${}\pm0.004$} & $4.87${\scriptsize${}\pm0.21$} & $5797${\scriptsize${}\pm600$} & $2.03${\scriptsize${}\pm0.074$}\\
+ & RCP (PCP score) & $0.898${\scriptsize${}\pm0.003$} & $3.77${\scriptsize${}\pm0.31$} & $1880${\scriptsize${}\pm313$} & $2.04${\scriptsize${}\pm0.073$}\\
+\bottomrule
+\end{tabular}}
+\end{table}

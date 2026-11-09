@@ -1,0 +1,36 @@
+\begin{table}[!htbp]
+\caption{The same density fit with one-stage calibration and with \cref{alg:local}: region-averaged conditional coverage error ($\times100$) and shape loss $\cS^\circ$ relative to $\Leb(\Cstar)$ of one-stage calibration with the density fitted on all $4000$ fitting points (all), and of one-stage calibration (one) and \cref{alg:local} (two) with the density fitted on the $3000$ points of two-stage calibration; mean $\pm$ standard error over twenty replications.}\label{tab:samefit}
+\centering\small
+\resizebox{\ifdim\width>\textwidth\textwidth\else\width\fi}{!}{%
+\begin{tabular}{lllcccccc}
+\toprule
+ & & & \multicolumn{3}{c}{cond.\ cov.\ error ($\times100$)} & \multicolumn{3}{c}{shape loss $\cS^\circ$}\\
+\cmidrule(lr){4-6}\cmidrule(lr){7-9}
+model & $d_Y$ & estimate & all & one & two & all & one & two\\
+\midrule
+Gaussian & $2$ & NN & $1.62${\scriptsize${}\pm0.14$} & $1.81${\scriptsize${}\pm0.13$} & $2.38${\scriptsize${}\pm0.13$} & $0.00669${\scriptsize${}\pm4.8\times10^{-4}$} & $0.00698${\scriptsize${}\pm4.6\times10^{-4}$} & $0.00697${\scriptsize${}\pm4.7\times10^{-4}$}\\
+ &  & LP & $2.21${\scriptsize${}\pm0.10$} & $2.25${\scriptsize${}\pm0.12$} & $2.29${\scriptsize${}\pm0.11$} & $0.00980${\scriptsize${}\pm4.1\times10^{-4}$} & $0.0109${\scriptsize${}\pm7.1\times10^{-4}$} & $0.0117${\scriptsize${}\pm8.4\times10^{-4}$}\\
+ &  & partition & $3.65${\scriptsize${}\pm0.08$} & $3.65${\scriptsize${}\pm0.09$} & $2.29${\scriptsize${}\pm0.12$} & $0.0297${\scriptsize${}\pm0.0015$} & $0.0322${\scriptsize${}\pm0.0011$} & $0.0325${\scriptsize${}\pm0.0012$}\\
+\addlinespace[2pt]
+ & $5$ & NN & $1.67${\scriptsize${}\pm0.08$} & $1.89${\scriptsize${}\pm0.11$} & $2.95${\scriptsize${}\pm0.13$} & $0.0177${\scriptsize${}\pm8.6\times10^{-4}$} & $0.0204${\scriptsize${}\pm0.0012$} & $0.0197${\scriptsize${}\pm0.0012$}\\
+ &  & LP & $3.78${\scriptsize${}\pm0.25$} & $3.77${\scriptsize${}\pm0.18$} & $2.83${\scriptsize${}\pm0.12$} & $0.147${\scriptsize${}\pm0.026$} & $0.0882${\scriptsize${}\pm0.0068$} & $0.117${\scriptsize${}\pm0.0086$}\\
+ &  & partition & $5.99${\scriptsize${}\pm0.09$} & $6.16${\scriptsize${}\pm0.09$} & $2.77${\scriptsize${}\pm0.13$} & $0.164${\scriptsize${}\pm0.0051$} & $0.214${\scriptsize${}\pm0.0075$} & $0.181${\scriptsize${}\pm0.0057$}\\
+\addlinespace[2pt]
+multimodal & $2$ & NN & $2.76${\scriptsize${}\pm0.19$} & $2.48${\scriptsize${}\pm0.14$} & $3.18${\scriptsize${}\pm0.15$} & $0.180${\scriptsize${}\pm0.017$} & $0.200${\scriptsize${}\pm0.013$} & $0.246${\scriptsize${}\pm0.029$}\\
+ &  & LP & $5.28${\scriptsize${}\pm0.11$} & $5.43${\scriptsize${}\pm0.17$} & $3.03${\scriptsize${}\pm0.15$} & $0.980${\scriptsize${}\pm0.035$} & $1.11${\scriptsize${}\pm0.033$} & $0.310${\scriptsize${}\pm0.023$}\\
+ &  & partition & $5.86${\scriptsize${}\pm0.12$} & $5.97${\scriptsize${}\pm0.10$} & $2.93${\scriptsize${}\pm0.11$} & $1.17${\scriptsize${}\pm0.042$} & $1.31${\scriptsize${}\pm0.061$} & $0.772${\scriptsize${}\pm0.054$}\\
+\addlinespace[2pt]
+ & $5$ & NN & $5.23${\scriptsize${}\pm0.37$} & $5.19${\scriptsize${}\pm0.31$} & $2.50${\scriptsize${}\pm0.09$} & $4861${\scriptsize${}\pm722$} & $1.22\times10^{4}${\scriptsize${}\pm3113$} & $1248${\scriptsize${}\pm415$}\\
+ &  & LP & $7.06${\scriptsize${}\pm0.13$} & $6.92${\scriptsize${}\pm0.16$} & $2.77${\scriptsize${}\pm0.11$} & $3.83\times10^{4}${\scriptsize${}\pm4779$} & $4.64\times10^{4}${\scriptsize${}\pm6767$} & $660${\scriptsize${}\pm190$}\\
+ &  & partition & $5.99${\scriptsize${}\pm0.10$} & $6.06${\scriptsize${}\pm0.10$} & $2.64${\scriptsize${}\pm0.12$} & $1.42\times10^{4}${\scriptsize${}\pm1143$} & $1.67\times10^{4}${\scriptsize${}\pm1214$} & $36.3${\scriptsize${}\pm14$}\\
+\addlinespace[2pt]
+manifold & $2$ & NN & $1.66${\scriptsize${}\pm0.15$} & $1.83${\scriptsize${}\pm0.12$} & $2.59${\scriptsize${}\pm0.08$} & $0.0738${\scriptsize${}\pm0.0048$} & $0.0844${\scriptsize${}\pm0.0056$} & $0.0870${\scriptsize${}\pm0.0061$}\\
+ &  & LP & $3.30${\scriptsize${}\pm0.06$} & $3.41${\scriptsize${}\pm0.07$} & $2.47${\scriptsize${}\pm0.11$} & $0.548${\scriptsize${}\pm0.0072$} & $0.581${\scriptsize${}\pm0.017$} & $0.385${\scriptsize${}\pm0.018$}\\
+ &  & partition & $3.92${\scriptsize${}\pm0.04$} & $3.93${\scriptsize${}\pm0.04$} & $2.47${\scriptsize${}\pm0.09$} & $0.807${\scriptsize${}\pm0.015$} & $0.806${\scriptsize${}\pm0.013$} & $0.554${\scriptsize${}\pm0.018$}\\
+\addlinespace[2pt]
+ & $5$ & NN & $4.90${\scriptsize${}\pm0.45$} & $3.86${\scriptsize${}\pm0.30$} & $2.61${\scriptsize${}\pm0.12$} & $9.04${\scriptsize${}\pm3.6$} & $111${\scriptsize${}\pm38$} & $3.61${\scriptsize${}\pm1.2$}\\
+ &  & LP & $5.49${\scriptsize${}\pm0.08$} & $5.44${\scriptsize${}\pm0.09$} & $2.52${\scriptsize${}\pm0.09$} & $1.18\times10^{4}${\scriptsize${}\pm882$} & $1.32\times10^{4}${\scriptsize${}\pm1189$} & $8.80${\scriptsize${}\pm2.3$}\\
+ &  & partition & $4.12${\scriptsize${}\pm0.07$} & $4.21${\scriptsize${}\pm0.09$} & $2.53${\scriptsize${}\pm0.10$} & $3256${\scriptsize${}\pm110$} & $3572${\scriptsize${}\pm103$} & $9.61${\scriptsize${}\pm1.8$}\\
+\bottomrule
+\end{tabular}}
+\end{table}

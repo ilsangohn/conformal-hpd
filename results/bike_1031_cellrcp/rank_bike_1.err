@@ -1,0 +1,39 @@
+[    0.1s] fit full: nn 0.0s, lp 0.0s, epochs 0, lp (None, None) edge None
+[    0.4s] cell full: m 5 hy 0.2 edge ['high', 'interior']
+[    0.8s] CELL: marg 0.8834 cerr 0.0295/0.0592 area 6.318
+[    1.0s] cell A: m 5 hy 0.2 edge ['high', 'interior']
+[    1.5s] CELL-A: marg 0.8936 cerr 0.0246/0.0667 area 6.584
+[    2.8s] CELL-RCP: marg 0.8936 cerr 0.0188/0.0373 area 6.904
+[   13.4s] CELL-LOC: marg 0.8942 cerr 0.0241/0.0446 area 6.869
+[   88.5s] CELL-RANK: marg 0.8813 cerr 0.0299/0.0638 area 6.993
+[   88.5s] CELL-RANKFIX: marg 0.8842 cerr 0.0394/0.1048 area 7.413
+[   88.5s] CELL-RANKISO: marg 0.8807 cerr 0.0268/0.0577 area 6.884
+[   88.5s] CELL-RANKH0.1: marg 0.8774 cerr 0.0262/0.0518 area 8.131
+[   88.5s] CELL-RANKH0.15: marg 0.8850 cerr 0.0221/0.0468 area 7.217
+[   88.5s] CELL-RANKH0.22: marg 0.8807 cerr 0.0268/0.0577 area 6.884
+[   88.5s] CELL-RANKH0.3: marg 0.8813 cerr 0.0299/0.0638 area 6.993
+[   88.5s] CELL-RANKH0.4: marg 0.8848 cerr 0.0368/0.0945 area 7.369
+[   88.5s] CELL-RANKH0.55: marg 0.8840 cerr 0.0469/0.1116 area 7.693
+[   88.6s] CELL-RANKH0.75: marg 0.8906 cerr 0.0467/0.0945 area 8.020
+[   88.6s] CELL-RANKH1.0: marg 0.8918 cerr 0.0441/0.0815 area 7.793
+[   88.6s] CELL-RANKH1.5: marg 0.8891 cerr 0.0394/0.1321 area 7.527
+[   88.6s] # total 88.6s
+       89.17 real        82.33 user         6.62 sys
+          1386708992  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               93480  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                2199  involuntary context switches
+        938406571427  instructions retired
+        271427711876  cycles elapsed
+           527713960  peak memory footprint
+# exit=0 lines=17 Sat Oct 31 18:34:26 KST 2026

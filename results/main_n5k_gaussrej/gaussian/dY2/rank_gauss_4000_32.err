@@ -1,0 +1,60 @@
+[   83.0s] fit full: nn 8.8s, lp 69.1s, {'lp_hx': 1.35, 'lp_hy': 0.45, 'lp_cv': {'0.6,0.2': 0.443103, '0.6,0.3': 0.429082, '0.6,0.45': 0.422355, '0.6,0.65': 0.421913, '0.9,0.2': 0.431322, '0.9,0.3': 0.427299, '0.9,0.45': 0.422122, '0.9,0.65': 0.422196, '1.35,0.2': 0.43132, '1.35,0.3': 0.425122, '1.35,0.45': 0.421849, '1.35,0.65': 0.422723, '2.0,0.2': 0.431496, '2.0,0.3': 0.425327, '2.0,0.45': 0.421974, '2.0,0.65': 0.422998}, 'nn_epochs': 23, 'lp_edge': ['interior', 'interior']}
+[  147.6s] HPD-NN done
+[  147.6s] CHCDS done
+[  148.3s] PCP done
+[ 4652.7s] HPD-LP done
+[ 4654.5s] ELLIPSOID done
+[ 4679.6s] CELL done
+[ 4733.5s] fit A: nn 7.1s, lp 46.8s, {'lp_hx': 1.35, 'lp_hy': 0.45, 'lp_cv': {'0.6,0.2': 0.441678, '0.6,0.3': 0.432106, '0.6,0.45': 0.424423, '0.6,0.65': 0.421134, '0.9,0.2': 0.427685, '0.9,0.3': 0.425787, '0.9,0.45': 0.42119, '0.9,0.65': 0.421303, '1.35,0.2': 0.427682, '1.35,0.3': 0.424567, '1.35,0.45': 0.420726, '1.35,0.65': 0.421881, '2.0,0.2': 0.429802, '2.0,0.3': 0.424802, '2.0,0.45': 0.420841, '2.0,0.65': 0.42218}, 'nn_epochs': 21, 'lp_edge': ['interior', 'interior']}
+[ 4812.3s] HPD-NN-A done
+[ 4881.4s] HPD-NN-RCP done
+[ 4883.4s] HPD-NN-LOC done
+[ 4896.8s] HPD-NN-RANK done
+[ 4897.0s] HPD-NN-RANKFIX done
+[ 4897.1s] HPD-NN-RANKIND done
+[ 4897.2s] HPD-NN-RANKISO done
+[ 8078.5s] HPD-LP-A done
+[10513.2s] HPD-LP-RCP done
+[10515.2s] HPD-LP-LOC done
+[10929.1s] HPD-LP-RANK done
+[10929.2s] HPD-LP-RANKFIX done
+[10929.3s] HPD-LP-RANKIND done
+[10929.4s] HPD-LP-RANKISO done
+[10941.1s] CELL-A done
+[10942.7s] CELL-LOC done
+[10946.6s] CELL-RANK done
+[10946.7s] CELL-RANKFIX done
+[10946.8s] CELL-RANKIND done
+[10946.9s] CELL-RANKISO done
+[10947.3s] CELL-RCP done
+[10948.8s] RCP-ELLIPSOID done
+[10949.8s] RCP-PCP done
+[10952.3s] OT-CP done
+[10961.5s] ORACLE-COND done
+[10961.5s] ORACLE-MARG done
+# stage_times {"baselines": 1.7, "dens_ev": 546.2, "evaluation": 1.7, "fit_cell": 0.2, "fit_lp": 115.9, "fit_mean": 2.6, "fit_nn": 15.9, "hpd_mc": 7319.0, "oracle": 8.1, "proposal": 4.3, "rank": 435.4, "rcp_aux_hpd": 2503.1}
+# total 10961.5s
+	Command being timed: "python sim_rank.py 4000 32 gauss 2"
+	User time (seconds): 10841.57
+	System time (seconds): 119.09
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:02:43
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1689592
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 11
+	Minor (reclaiming a frame) page faults: 47948461
+	Voluntary context switches: 835
+	Involuntary context switches: 24274
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 224
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+# exit=0 lines=33

@@ -1,0 +1,38 @@
+[   35.3s] fit full: nn 3.9s, lp 28.5s, {'lp_hx': 0.6, 'lp_hy': 0.95, 'lp_cv': {'0.6,0.2': 1.102633, '0.6,0.3': 0.704228, '0.6,0.45': 0.511525, '0.6,0.65': 0.43584, '0.6,0.95': 0.406526, '0.9,0.2': 0.927221, '0.9,0.3': 0.675759, '0.9,0.45': 0.483481, '0.9,0.65': 0.41992, '0.9,0.95': 0.412473, '1.35,0.2': 0.913795, '1.35,0.3': 0.67191, '1.35,0.45': 0.463404, '1.35,0.65': 0.410096, '1.35,0.95': 0.41618, '2.0,0.2': 0.912564, '2.0,0.3': 0.673303, '2.0,0.45': 0.461168, '2.0,0.65': 0.41143, '2.0,0.95': 0.419057, '3.0,0.2': 0.912905, '3.0,0.3': 0.675647, '3.0,0.45': 0.460483, '3.0,0.65': 0.411855, '3.0,0.95': 0.420751}, 'nn_epochs': 18, 'lp_edge': ['low', 'high']}
+[   45.1s] HPD-NN done
+[ 1964.0s] HPD-LP done
+[ 1979.9s] CELL done
+[ 2001.8s] fit A: nn 3.2s, lp 18.6s, {'lp_hx': 0.9, 'lp_hy': 0.95, 'lp_cv': {'0.6,0.2': 1.186065, '0.6,0.3': 0.741603, '0.6,0.45': 0.559805, '0.6,0.65': 0.453062, '0.6,0.95': 0.429006, '0.9,0.2': 1.022711, '0.9,0.3': 0.714771, '0.9,0.45': 0.506148, '0.9,0.65': 0.433072, '0.9,0.95': 0.414793, '1.35,0.2': 1.015884, '1.35,0.3': 0.68121, '1.35,0.45': 0.488139, '1.35,0.65': 0.423295, '1.35,0.95': 0.419523, '2.0,0.2': 1.017805, '2.0,0.3': 0.677873, '2.0,0.45': 0.483872, '2.0,0.65': 0.423018, '2.0,0.95': 0.420979, '3.0,0.2': 1.018893, '3.0,0.3': 0.6775, '3.0,0.45': 0.483083, '3.0,0.65': 0.420175, '3.0,0.95': 0.421801}, 'nn_epochs': 30, 'lp_edge': ['interior', 'high']}
+[ 2009.7s] HPD-NN-RANK done
+[ 2009.9s] HPD-NN-RANKFIX done
+[ 2010.1s] HPD-NN-RANKIND done
+[ 2010.4s] HPD-NN-RANKISO done
+[ 3171.6s] HPD-LP-RANK done
+[ 3171.8s] HPD-LP-RANKFIX done
+[ 3172.0s] HPD-LP-RANKIND done
+[ 3172.2s] HPD-LP-RANKISO done
+[ 3183.4s] CELL-RANK done
+[ 3183.6s] CELL-RANKFIX done
+[ 3183.8s] CELL-RANKIND done
+[ 3184.0s] CELL-RANKISO done
+# stage_times {"dens_ev": 1029.0, "evaluation": 1.7, "fit_cell": 0.1, "fit_lp": 47.2, "fit_nn": 7.1, "hpd_mc": 1410.3, "proposal": 2.0, "rank": 683.5}
+# total 3184.0s
+     3184.86 real      2611.39 user       572.06 sys
+          4066721792  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              536885  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+               39251  involuntary context switches
+      35910510678148  instructions retired
+       9725361855835  cycles elapsed
+           944360376  peak memory footprint
+# exit=0 lines=16

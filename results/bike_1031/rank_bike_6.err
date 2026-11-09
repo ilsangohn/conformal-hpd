@@ -1,0 +1,79 @@
+[   90.4s] fit full: nn 18.9s, lp 71.4s, epochs 52, lp (0.18, 0.65) edge ['interior', 'interior']
+[   97.0s] HPD-NN: marg 0.8971 cerr 0.0144/0.0509 area 4.230
+[   97.3s] CHCDS: marg 0.8977 cerr 0.0153/0.0489 area 4.247
+[   99.1s] PCP: marg 0.8897 cerr 0.0356/0.0812 area 5.206
+[  248.0s] HPD-LP: marg 0.8881 cerr 0.0288/0.0591 area 5.091
+[  269.6s] kde: 0.1, 0.2 edge ['interior', 'interior']
+[  290.2s] HPD-KDE: marg 0.8963 cerr 0.0247/0.0413 area 4.744
+[  290.6s] cell full: m 5 hy 0.2 edge ['high', 'interior']
+[  291.2s] CELL: marg 0.8965 cerr 0.0249/0.0460 area 6.330
+[  294.0s] ELLIPSOID: marg 0.8957 cerr 0.0201/0.0490 area 4.734
+[  372.0s] fit A: nn 25.9s, lp 52.2s, epochs 77, lp (0.12, 0.65) edge ['interior', 'interior']
+[  372.3s] cell A: m 4 hy 0.2 edge ['interior', 'interior']
+[  378.9s] HPD-NN-A: marg 0.8938 cerr 0.0237/0.0611 area 4.342
+[  383.5s] HPD-NN-RCP: marg 0.8936 cerr 0.0201/0.0501 area 4.386
+[  394.5s] HPD-NN-LOC: marg 0.8893 cerr 0.0207/0.0528 area 4.363
+[  506.4s] HPD-NN-RANK: marg 0.8969 cerr 0.0317/0.0644 area 5.095
+[  506.4s] HPD-NN-RANKFIX: marg 0.8947 cerr 0.0306/0.0673 area 5.059
+[  506.4s] HPD-NN-RANKISO: marg 0.8914 cerr 0.0256/0.0768 area 4.997
+[  506.4s] HPD-NN-RANKH0.1: marg 0.8965 cerr 0.0262/0.0605 area 5.971
+[  506.4s] HPD-NN-RANKH0.15: marg 0.8936 cerr 0.0255/0.0635 area 5.089
+[  506.5s] HPD-NN-RANKH0.22: marg 0.8914 cerr 0.0256/0.0768 area 4.997
+[  506.5s] HPD-NN-RANKH0.3: marg 0.8938 cerr 0.0275/0.0600 area 5.148
+[  506.5s] HPD-NN-RANKH0.4: marg 0.8951 cerr 0.0311/0.0644 area 5.085
+[  506.5s] HPD-NN-RANKH0.55: marg 0.8969 cerr 0.0317/0.0644 area 5.095
+[  506.5s] HPD-NN-RANKH0.75: marg 0.8977 cerr 0.0347/0.0644 area 5.151
+[  506.5s] HPD-NN-RANKH1.0: marg 0.8977 cerr 0.0318/0.0721 area 5.125
+[  506.5s] HPD-NN-RANKH1.5: marg 0.8936 cerr 0.0261/0.0857 area 5.076
+[  565.5s] HPD-LP-A: marg 0.8821 cerr 0.0406/0.1406 area 5.363
+[  593.9s] HPD-LP-RCP: marg 0.8887 cerr 0.0205/0.0496 area 5.403
+[  604.8s] HPD-LP-LOC: marg 0.8865 cerr 0.0267/0.0777 area 5.352
+[  908.8s] HPD-LP-RANK: marg 0.8834 cerr 0.0287/0.0545 area 5.118
+[  908.9s] HPD-LP-RANKFIX: marg 0.8842 cerr 0.0296/0.0589 area 5.132
+[  908.9s] HPD-LP-RANKISO: marg 0.8848 cerr 0.0267/0.0591 area 5.149
+[  908.9s] HPD-LP-RANKH0.1: marg 0.9049 cerr 0.0190/0.0553 area 6.859
+[  908.9s] HPD-LP-RANKH0.15: marg 0.8940 cerr 0.0220/0.0497 area 5.528
+[  908.9s] HPD-LP-RANKH0.22: marg 0.8848 cerr 0.0267/0.0591 area 5.149
+[  908.9s] HPD-LP-RANKH0.3: marg 0.8819 cerr 0.0294/0.0514 area 5.093
+[  908.9s] HPD-LP-RANKH0.4: marg 0.8834 cerr 0.0287/0.0545 area 5.118
+[  908.9s] HPD-LP-RANKH0.55: marg 0.8824 cerr 0.0338/0.0810 area 5.143
+[  908.9s] HPD-LP-RANKH0.75: marg 0.8942 cerr 0.0356/0.0788 area 5.535
+[  908.9s] HPD-LP-RANKH1.0: marg 0.8936 cerr 0.0314/0.0722 area 5.511
+[  908.9s] HPD-LP-RANKH1.5: marg 0.8922 cerr 0.0319/0.0711 area 5.440
+[  909.4s] CELL-A: marg 0.8838 cerr 0.0384/0.0935 area 6.531
+[  921.5s] CELL-LOC: marg 0.8899 cerr 0.0341/0.0774 area 6.775
+[ 1001.0s] CELL-RANK: marg 0.8957 cerr 0.0429/0.1057 area 7.750
+[ 1001.0s] CELL-RANKFIX: marg 0.8932 cerr 0.0312/0.1000 area 7.567
+[ 1001.0s] CELL-RANKISO: marg 0.8848 cerr 0.0287/0.1000 area 7.073
+[ 1001.0s] CELL-RANKH0.1: marg 0.8893 cerr 0.0222/0.0547 area 8.216
+[ 1001.0s] CELL-RANKH0.15: marg 0.8828 cerr 0.0248/0.0717 area 7.057
+[ 1001.0s] CELL-RANKH0.22: marg 0.8887 cerr 0.0251/0.0800 area 7.120
+[ 1001.0s] CELL-RANKH0.3: marg 0.8848 cerr 0.0287/0.1000 area 7.073
+[ 1001.0s] CELL-RANKH0.4: marg 0.8926 cerr 0.0293/0.1000 area 7.484
+[ 1001.0s] CELL-RANKH0.55: marg 0.8957 cerr 0.0429/0.1057 area 7.750
+[ 1001.0s] CELL-RANKH0.75: marg 0.8932 cerr 0.0478/0.1257 area 7.962
+[ 1001.0s] CELL-RANKH1.0: marg 0.8908 cerr 0.0467/0.1686 area 7.808
+[ 1001.0s] CELL-RANKH1.5: marg 0.8899 cerr 0.0498/0.1829 area 7.568
+[ 1004.9s] RCP-ELLIPSOID: marg 0.8938 cerr 0.0179/0.0497 area 4.755
+[ 1006.0s] RCP-PCP: marg 0.8865 cerr 0.0215/0.0812 area 5.393
+[ 1014.8s] OT-CP: marg 0.8875 cerr 0.0515/0.1584 area 5.642
+[ 1014.8s] # total 1014.8s
+     1015.96 real       780.27 user       234.69 sys
+          4695867392  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+             1273509  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+               14386  involuntary context switches
+      10131945073059  instructions retired
+       3084328200110  cycles elapsed
+          1325337840  peak memory footprint
+# exit=0 lines=55 Sat Oct 31 18:28:04 KST 2026

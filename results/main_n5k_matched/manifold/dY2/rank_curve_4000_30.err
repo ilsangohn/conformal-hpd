@@ -1,0 +1,55 @@
+[   30.1s] fit full: nn 8.1s, lp 20.9s, {'lp_hx': 2.0, 'lp_hy': 0.2, 'lp_cv': {'0.6,0.2': 0.378545, '0.6,0.3': 0.377456, '0.6,0.45': 0.387142, '0.6,0.65': 0.395259, '0.9,0.2': 0.367427, '0.9,0.3': 0.377862, '0.9,0.45': 0.388347, '0.9,0.65': 0.395718, '1.35,0.2': 0.363843, '1.35,0.3': 0.375257, '1.35,0.45': 0.386539, '1.35,0.65': 0.396161, '2.0,0.2': 0.363684, '2.0,0.3': 0.375142, '2.0,0.45': 0.386591, '2.0,0.65': 0.396331}, 'nn_epochs': 61, 'lp_edge': ['high', 'low']}
+[   52.5s] HPD-NN done
+[   52.5s] CHCDS done
+[   53.1s] PCP done
+[  458.0s] HPD-LP done
+[  458.6s] ELLIPSOID done
+[  469.1s] CELL done
+[  491.7s] fit A: nn 7.9s, lp 14.7s, {'lp_hx': 2.0, 'lp_hy': 0.2, 'lp_cv': {'0.6,0.2': 0.378621, '0.6,0.3': 0.382968, '0.6,0.45': 0.389689, '0.6,0.65': 0.398146, '0.9,0.2': 0.366595, '0.9,0.3': 0.379505, '0.9,0.45': 0.38964, '0.9,0.65': 0.39647, '1.35,0.2': 0.365983, '1.35,0.3': 0.381353, '1.35,0.45': 0.386874, '1.35,0.65': 0.396554, '2.0,0.2': 0.365952, '2.0,0.3': 0.381526, '2.0,0.45': 0.386755, '2.0,0.65': 0.396714}, 'nn_epochs': 79, 'lp_edge': ['high', 'low']}
+[  512.8s] HPD-NN-A done
+[  529.6s] HPD-NN-RCP done
+[  530.9s] HPD-NN-LOC done
+[  536.0s] HPD-NN-RANK done
+[  536.2s] HPD-NN-RANKFIX done
+[  536.3s] HPD-NN-RANKIND done
+[  536.5s] HPD-NN-RANKISO done
+[  844.9s] HPD-LP-A done
+[ 1092.6s] HPD-LP-RCP done
+[ 1093.8s] HPD-LP-LOC done
+[ 1178.5s] HPD-LP-RANK done
+[ 1178.7s] HPD-LP-RANKFIX done
+[ 1178.8s] HPD-LP-RANKIND done
+[ 1179.0s] HPD-LP-RANKISO done
+[ 1185.5s] CELL-A done
+[ 1186.9s] CELL-LOC done
+[ 1190.0s] CELL-RANK done
+[ 1190.1s] CELL-RANKFIX done
+[ 1190.3s] CELL-RANKIND done
+[ 1190.4s] CELL-RANKISO done
+[ 1190.8s] CELL-RCP done
+[ 1191.5s] RCP-ELLIPSOID done
+[ 1192.3s] RCP-PCP done
+[ 1194.1s] OT-CP done
+[ 1196.8s] ORACLE-COND done
+[ 1196.9s] ORACLE-MARG done
+# stage_times {"baselines": 1.1, "dens_ev": 70.5, "evaluation": 1.3, "fit_cell": 0.1, "fit_lp": 35.6, "fit_mean": 0.8, "fit_nn": 16.1, "hpd_mc": 701.9, "oracle": 2.3, "proposal": 0.7, "rank": 95.3, "rcp_aux_hpd": 263.7}
+# total 1196.9s
+     1197.84 real       960.94 user       236.06 sys
+          3224371200  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              521906  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+               12564  involuntary context switches
+      13970869921030  instructions retired
+       3639716046909  cycles elapsed
+          1005833048  peak memory footprint
+# exit=0 lines=33

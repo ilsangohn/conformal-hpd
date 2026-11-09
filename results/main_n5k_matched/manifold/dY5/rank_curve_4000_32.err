@@ -1,0 +1,59 @@
+[  360.3s] fit full: nn 86.1s, lp 248.2s, {'lp_hx': 2.0, 'lp_hy': 0.45, 'lp_cv': {'0.6,0.2': 0.823104, '0.6,0.3': 0.534267, '0.6,0.45': 0.385043, '0.6,0.65': 0.382167, '0.6,0.95': 0.439166, '0.9,0.2': 0.70052, '0.9,0.3': 0.490966, '0.9,0.45': 0.357096, '0.9,0.65': 0.394428, '0.9,0.95': 0.450788, '1.35,0.2': 0.69594, '1.35,0.3': 0.473024, '1.35,0.45': 0.349101, '1.35,0.65': 0.409961, '1.35,0.95': 0.453163, '2.0,0.2': 0.69578, '2.0,0.3': 0.474335, '2.0,0.45': 0.34856, '2.0,0.65': 0.409893, '2.0,0.95': 0.455424, '3.0,0.2': 0.695897, '3.0,0.3': 0.475325, '3.0,0.45': 0.349412, '3.0,0.65': 0.409797, '3.0,0.95': 0.456476}, 'nn_epochs': 39, 'lp_edge': ['interior', 'interior']}
+[  710.8s] HPD-NN done
+[  710.9s] CHCDS done
+[  711.9s] PCP done
+[27684.4s] HPD-LP done
+[27688.0s] ELLIPSOID done
+[27728.0s] CELL done
+[27848.6s] fit A: nn 22.3s, lp 98.3s, {'lp_hx': 3.0, 'lp_hy': 0.45, 'lp_cv': {'0.6,0.2': 0.88514, '0.6,0.3': 0.563287, '0.6,0.45': 0.415244, '0.6,0.65': 0.39118, '0.6,0.95': 0.447134, '0.9,0.2': 0.771683, '0.9,0.3': 0.533426, '0.9,0.45': 0.389938, '0.9,0.65': 0.396592, '0.9,0.95': 0.459221, '1.35,0.2': 0.755577, '1.35,0.3': 0.504385, '1.35,0.45': 0.391075, '1.35,0.65': 0.399141, '1.35,0.95': 0.462373, '2.0,0.2': 0.755375, '2.0,0.3': 0.505596, '2.0,0.45': 0.390129, '2.0,0.65': 0.399596, '2.0,0.95': 0.466833, '3.0,0.2': 0.755482, '3.0,0.3': 0.506681, '3.0,0.45': 0.388885, '3.0,0.65': 0.400001, '3.0,0.95': 0.467378}, 'nn_epochs': 48, 'lp_edge': ['high', 'interior']}
+[28125.7s] HPD-NN-A done
+[28362.7s] HPD-NN-RCP done
+[28364.9s] HPD-NN-LOC done
+[28379.3s] HPD-NN-RANK done
+[28379.4s] HPD-NN-RANKFIX done
+[28379.5s] HPD-NN-RANKIND done
+[28379.7s] HPD-NN-RANKISO done
+[42051.9s] HPD-LP-A done
+[53326.0s] HPD-LP-RCP done
+[53328.0s] HPD-LP-LOC done
+[54429.1s] HPD-LP-RANK done
+[54429.2s] HPD-LP-RANKFIX done
+[54429.3s] HPD-LP-RANKIND done
+[54429.4s] HPD-LP-RANKISO done
+[54456.2s] CELL-A done
+[54459.1s] CELL-LOC done
+[54464.5s] CELL-RANK done
+[54464.7s] CELL-RANKFIX done
+[54464.8s] CELL-RANKIND done
+[54464.9s] CELL-RANKISO done
+[54465.4s] CELL-RCP done
+[54468.2s] RCP-ELLIPSOID done
+[54469.5s] RCP-PCP done
+[54498.2s] ORACLE-COND done
+[54498.2s] ORACLE-MARG done
+# stage_times {"baselines": 1.4, "dens_ev": 1066.9, "evaluation": 4.3, "fit_cell": 0.4, "fit_lp": 346.5, "fit_mean": 5.5, "fit_nn": 108.4, "hpd_mc": 40271.4, "oracle": 27.3, "proposal": 23.0, "rank": 1125.9, "rcp_aux_hpd": 11511.0}
+# total 54498.2s
+	Command being timed: "python sim_rank.py 4000 32 curve 5"
+	User time (seconds): 53865.08
+	System time (seconds): 630.85
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 15:08:24
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1894164
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 120617639
+	Voluntary context switches: 88
+	Involuntary context switches: 87420
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 256
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+# exit=0 lines=32

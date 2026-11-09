@@ -1,0 +1,38 @@
+[   37.3s] fit full: nn 5.0s, lp 29.4s, {'lp_hx': 0.9, 'lp_hy': 0.95, 'lp_cv': {'0.6,0.2': 1.108127, '0.6,0.3': 0.672131, '0.6,0.45': 0.481289, '0.6,0.65': 0.424344, '0.6,0.95': 0.401591, '0.9,0.2': 0.959819, '0.9,0.3': 0.650242, '0.9,0.45': 0.451448, '0.9,0.65': 0.408266, '0.9,0.95': 0.398796, '1.35,0.2': 0.939838, '1.35,0.3': 0.617621, '1.35,0.45': 0.446887, '1.35,0.65': 0.401473, '1.35,0.95': 0.402594, '2.0,0.2': 0.939302, '2.0,0.3': 0.611848, '2.0,0.45': 0.441567, '2.0,0.65': 0.39971, '2.0,0.95': 0.405909, '3.0,0.2': 0.939659, '3.0,0.3': 0.609818, '3.0,0.45': 0.442572, '3.0,0.65': 0.399636, '3.0,0.95': 0.407335}, 'nn_epochs': 26, 'lp_edge': ['interior', 'high']}
+[   47.3s] HPD-NN done
+[ 2751.8s] HPD-LP done
+[ 2769.7s] CELL done
+[ 2793.3s] fit A: nn 1.9s, lp 21.7s, {'lp_hx': 0.9, 'lp_hy': 0.95, 'lp_cv': {'0.6,0.2': 1.162301, '0.6,0.3': 0.728904, '0.6,0.45': 0.511518, '0.6,0.65': 0.425185, '0.6,0.95': 0.412688, '0.9,0.2': 1.026874, '0.9,0.3': 0.704644, '0.9,0.45': 0.482794, '0.9,0.65': 0.427056, '0.9,0.95': 0.407151, '1.35,0.2': 1.029263, '1.35,0.3': 0.683194, '1.35,0.45': 0.481107, '1.35,0.65': 0.418541, '1.35,0.95': 0.40998, '2.0,0.2': 1.030239, '2.0,0.3': 0.681867, '2.0,0.45': 0.480035, '2.0,0.65': 0.418407, '2.0,0.95': 0.412882, '3.0,0.2': 1.030916, '3.0,0.3': 0.683668, '3.0,0.45': 0.478601, '3.0,0.65': 0.418549, '3.0,0.95': 0.413889}, 'nn_epochs': 16, 'lp_edge': ['interior', 'high']}
+[ 2801.6s] HPD-NN-RANK done
+[ 2801.8s] HPD-NN-RANKFIX done
+[ 2802.1s] HPD-NN-RANKIND done
+[ 2802.4s] HPD-NN-RANKISO done
+[ 3918.9s] HPD-LP-RANK done
+[ 3919.2s] HPD-LP-RANKFIX done
+[ 3919.3s] HPD-LP-RANKIND done
+[ 3919.5s] HPD-LP-RANKISO done
+[ 3934.2s] CELL-RANK done
+[ 3934.4s] CELL-RANKFIX done
+[ 3934.7s] CELL-RANKIND done
+[ 3935.0s] CELL-RANKISO done
+# stage_times {"dens_ev": 1316.4, "evaluation": 2.0, "fit_cell": 0.2, "fit_lp": 51.1, "fit_nn": 6.9, "hpd_mc": 2005.7, "proposal": 2.0, "rank": 547.4}
+# total 3935.0s
+     3935.90 real      3297.68 user       636.26 sys
+          3881123840  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              541118  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   2  voluntary context switches
+               44193  involuntary context switches
+      42671491605852  instructions retired
+      11985444182981  cycles elapsed
+           958319496  peak memory footprint
+# exit=0 lines=16

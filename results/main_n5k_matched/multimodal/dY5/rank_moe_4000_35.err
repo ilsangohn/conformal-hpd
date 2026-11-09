@@ -1,0 +1,54 @@
+[   15.6s] fit full: nn 5.2s, lp 6.8s, {'lp_hx': 3.0, 'lp_hy': 0.65, 'lp_cv': {'0.6,0.2': 0.38, '0.6,0.3': 0.267737, '0.6,0.45': 0.110115, '0.6,0.65': 0.081835, '0.6,0.95': 0.084728, '0.9,0.2': 0.352148, '0.9,0.3': 0.203333, '0.9,0.45': 0.108091, '0.9,0.65': 0.080163, '0.9,0.95': 0.083902, '1.35,0.2': 0.351096, '1.35,0.3': 0.197502, '1.35,0.45': 0.107797, '1.35,0.65': 0.076589, '1.35,0.95': 0.084173, '2.0,0.2': 0.350929, '2.0,0.3': 0.197812, '2.0,0.45': 0.106286, '2.0,0.65': 0.07624, '2.0,0.95': 0.08441, '3.0,0.2': 0.350871, '3.0,0.3': 0.19799, '3.0,0.45': 0.106568, '3.0,0.65': 0.076167, '3.0,0.95': 0.084533}, 'nn_epochs': 29, 'lp_edge': ['high', 'interior']}
+[   71.1s] HPD-NN done
+[   71.1s] CHCDS done
+[   71.9s] PCP done
+[ 4770.5s] HPD-LP done
+[ 4771.3s] ELLIPSOID done
+[ 4782.3s] CELL done
+[ 4791.9s] fit A: nn 4.6s, lp 5.0s, {'lp_hx': 2.0, 'lp_hy': 0.65, 'lp_cv': {'0.6,0.2': 0.341688, '0.6,0.3': 0.250683, '0.6,0.45': 0.130882, '0.6,0.65': 0.095899, '0.6,0.95': 0.094123, '0.9,0.2': 0.329782, '0.9,0.3': 0.222467, '0.9,0.45': 0.11282, '0.9,0.65': 0.084957, '0.9,0.95': 0.09006, '1.35,0.2': 0.332525, '1.35,0.3': 0.226463, '1.35,0.45': 0.108806, '1.35,0.65': 0.080662, '1.35,0.95': 0.086837, '2.0,0.2': 0.33254, '2.0,0.3': 0.227152, '2.0,0.45': 0.10898, '2.0,0.65': 0.080619, '2.0,0.95': 0.086632, '3.0,0.2': 0.332557, '3.0,0.3': 0.227471, '3.0,0.45': 0.109111, '3.0,0.65': 0.08067, '3.0,0.95': 0.086682}, 'nn_epochs': 47, 'lp_edge': ['interior', 'interior']}
+[ 4844.6s] HPD-NN-A done
+[ 4889.3s] HPD-NN-RCP done
+[ 4890.7s] HPD-NN-LOC done
+[ 4895.9s] HPD-NN-RANK done
+[ 4896.0s] HPD-NN-RANKFIX done
+[ 4896.1s] HPD-NN-RANKIND done
+[ 4896.3s] HPD-NN-RANKISO done
+[ 8369.3s] HPD-LP-A done
+[11237.1s] HPD-LP-RCP done
+[11238.4s] HPD-LP-LOC done
+[11409.0s] HPD-LP-RANK done
+[11409.1s] HPD-LP-RANKFIX done
+[11409.2s] HPD-LP-RANKIND done
+[11409.3s] HPD-LP-RANKISO done
+[11417.1s] CELL-A done
+[11418.6s] CELL-LOC done
+[11421.7s] CELL-RANK done
+[11421.8s] CELL-RANKFIX done
+[11421.9s] CELL-RANKIND done
+[11422.0s] CELL-RANKISO done
+[11422.5s] CELL-RCP done
+[11423.4s] RCP-ELLIPSOID done
+[11424.3s] RCP-PCP done
+[11465.0s] ORACLE-COND done
+[11465.0s] ORACLE-MARG done
+# stage_times {"baselines": 1.1, "dens_ev": 292.1, "evaluation": 2.6, "fit_cell": 0.2, "fit_lp": 11.8, "fit_mean": 0.9, "fit_nn": 9.8, "hpd_mc": 8006.1, "oracle": 38.8, "proposal": 1.9, "rank": 181.2, "rcp_aux_hpd": 2911.8}
+# total 11465.0s
+    11465.90 real      9187.08 user      2262.71 sys
+          4796481536  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              342675  page reclaims
+                   2  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   2  voluntary context switches
+              130739  involuntary context switches
+     134688192136664  instructions retired
+      34895142762387  cycles elapsed
+          1020266920  peak memory footprint
+# exit=0 lines=32
