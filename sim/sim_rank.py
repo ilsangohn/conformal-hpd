@@ -11,12 +11,12 @@ are held out from each fitting sample; every density estimate is tuned on them (
 epochs of the network) with the rest of its fitting sample, and then refitted on its whole fitting sample with the
 selected tuning parameters (the same bandwidths, number of cubes and number of epochs).
 
-Models. d_X = 3, X ~ U[0,1]^3, Y-box [-2.5, 2.5]^{d_Y}. For d_Y = 2 the samplers reproduce sim_final.model(scen)
-draw for draw (same rng calls); for d_Y = 3 each model gets a third coordinate:
+Models. d_X = 3, X ~ U[0,1]^3, Y-box [-2.5, 2.5]^{d_Y}. For d_Y = 2 the samplers reproduce those of the
+earlier two-dimensional experiments draw for draw (same rng calls); for d_Y = 3 each model gets a third coordinate:
   gauss : N(ctr(x), sd(x)^2 I_3), ctr(x) = (0.6 Phi(idx_1) - 0.3, 0, 0), sd(x) = 0.30 + 0.30 Phi(idx_2);
   smooth: 1/2 N(-ctr, sd^2 I_3) + 1/2 N(ctr, sd^2 I_3), ctr(x) = (0.6 + 0.6 Phi(idx_1), 0, 0), sd = 0.30 + 0.15 Phi(idx_2);
   hetero: (1 - wt) N((0, 0.3(x_2 - 0.5), 0), 0.5^2 I_3) + wt [1/2 N((-0.9,0,0), 0.18^2 I_3) + 1/2 N((0.9,0,0), 0.18^2 I_3)].
-Fitting and calibration draws come from the truncated law by rejection in the gauss, moe and curve models (other models clip them to the box, as in sim_final); evaluation uses the truncated
+Fitting and calibration draws come from the truncated law by rejection in the gauss, moe and curve models (other models clip them to the box); evaluation uses the truncated
 distribution (exact draws by rejection) and its density p / P_x(box), with P_x(box) in closed form.
 
 One-stage HPD values (method computation): self-normalized importance sampling with M proposal points U_m shared by
@@ -60,6 +60,36 @@ from scipy.stats import t as student_t
 
 from sim_contrastive import BOX, bce
 from sim_metric import directions
+
+
+# ====================================================================== helpers of the models and baselines
+def sig(u):
+    return 1 / (1 + np.exp(-u))
+
+
+_HW, _HC = float(os.environ.get("HET_WIDTH", "0.15")), float(os.environ.get("HET_CENTER", "0.5"))   # transition in x1 of the hetero weight
+
+
+def _w(x1):
+    """Weight of the two-component part of the hetero model and of the manifold (curve) model."""
+    return sig((x1 - _HC) / _HW)
+
+
+def fit_mean_net(X, Y, seed):
+    """Mean network of the ELLIPSOID baseline (2 x 64 SiLU, Adam 2e-3, 60 epochs, batches of 256)."""
+    import torch
+    torch.manual_seed(seed); torch.set_num_threads(1)
+    mu, sd = X.mean(0), X.std(0)
+    Xt = torch.tensor((X - mu) / sd, dtype=torch.float32); Yt = torch.tensor(Y, dtype=torch.float32)
+    net = torch.nn.Sequential(torch.nn.Linear(X.shape[1], 64), torch.nn.SiLU(), torch.nn.Linear(64, 64),
+                              torch.nn.SiLU(), torch.nn.Linear(64, Y.shape[1]))
+    opt = torch.optim.Adam(net.parameters(), lr=2e-3)
+    for ep in range(60):
+        perm = torch.randperm(len(Xt))
+        for b in range(0, len(Xt), 256):
+            i = perm[b:b + 256]; opt.zero_grad()
+            ((net(Xt[i]) - Yt[i]) ** 2).mean().backward(); opt.step()
+    return lambda A: net(torch.tensor((A - mu) / sd, dtype=torch.float32)).detach().numpy()
 
 K, ALPHA = 5, 0.1
 GAMMA = 1 - ALPHA
@@ -166,13 +196,12 @@ class Model:
             a, s = sim_metric.params(X, self.W)
             mu = np.zeros((n, 2, d)); mu[:, 0, 0] = -a; mu[:, 1, 0] = a
             return np.full((n, 2), 0.5), mu, np.stack([s, s], 1)
-        import sim_cov
-        w = sim_cov._w(X[:, 0])
+        w = _w(X[:, 0])
         mu = np.zeros((n, 3, d)); mu[:, 0, 1] = 0.3 * (X[:, 1] - 0.5); mu[:, 1, 0] = -0.9; mu[:, 2, 0] = 0.9
         return np.stack([1 - w, w / 2, w / 2], 1), mu, np.tile([0.5, SDB, SDB], (n, 1))
 
     def draw_y(self, X, rng):
-        """Y | X with the rng calls of sim_gauss / sim_robust / sim_cov (identical draws for d_Y = 2); not clipped."""
+        """Y | X with the rng calls of the earlier two-dimensional samplers (identical draws for d_Y = 2); not clipped."""
         n, d = len(X), self.dY
         if self.scen == "plateau":                   # (|Y| / PL_R)^beta ~ Gamma(d / beta), direction uniform
             b = self.pl_beta(X); u = rng.standard_normal((n, d)); u /= np.linalg.norm(u, axis=1, keepdims=True)
@@ -215,8 +244,7 @@ class Model:
             comp = rng.choice([-1, 1], size=n)
             ctr = np.zeros((n, d)); ctr[:, 0] = comp * mu[:, 1, 0]
             return ctr + s[:, 0:1] * rng.standard_normal((n, d))
-        import sim_cov
-        w = sim_cov._w(X[:, 0])
+        w = _w(X[:, 0])
         isB = rng.uniform(size=n) < w
         comp = rng.choice([-1, 1], size=n)
         muA = np.zeros((n, d)); muA[:, 1] = 0.3 * (X[:, 1] - 0.5)
@@ -251,8 +279,7 @@ class Model:
         return (1 - w) * A + w * B
 
     def shell_w(self, X):
-        import sim_cov
-        return sim_cov._w(X[:, 0])
+        return _w(X[:, 0])
 
     def shell_r(self, X):
         return MF_R0 + MF_R1 * X[:, 1]
@@ -424,7 +451,7 @@ class Proposal:
 
 # ====================================================================== contrastive network
 def fit_net_tuned(Ztr, Ltr, Zv, Lv, Zall, Lall, seed, width=128, depth=3, max_epochs=200, patience=8):
-    """Contrastive network of sim_robust.fit_net (3 x 128 SiLU, Adam 2e-3, batches of 1024): the number of epochs is
+    """Contrastive network (3 x 128 SiLU, Adam 2e-3, batches of 1024): the number of epochs is
     the epoch with the smallest held-out loss on (Zv, Lv) when training on (Ztr, Ltr) (early stopping, patience 8);
     the network is then retrained from the same initialization on all rows (Zall, Lall) for that many epochs.
     Returns (eta, number of epochs)."""
@@ -1226,7 +1253,6 @@ def run(N, seed, scen, dY):
                                  grid_edge([-cv[f"{best[1]},{h}"] for h in hys], hys)]}
 
     def ellipsoid(Xf, Yf):
-        from sim_final import fit_mean_net
         with Timer("fit_mean"):
             mnet = fit_mean_net(Xf, Yf, seed)
         res = Yf - mnet(Xf); tree = cKDTree(Xf)
@@ -1466,13 +1492,9 @@ def selftest():
     lin = XB @ np.array([0.3, -1.0, 2.0]) + 0.7
     print("ll weights: max |sum w - 1| %.1e, max |linear reproduction error| %.1e, min weight %.3f" % (
         np.abs(Wt.sum(1) - 1).max(), np.abs(Wt @ lin - (T @ np.array([0.3, -1.0, 2.0]) + 0.7)).max(), Wt.min()))
-    # 3. models: d_Y = 2 samplers and densities equal sim_final.model
-    from sim_final import model as model_old
+    # 3. models: box mass in closed form and normalization of the truncated density
     for scen in ("gauss", "smooth", "hetero"):
-        smp, den, inR = model_old(scen); mo = Model(scen, 2)
-        X1, Y1 = smp(5000, np.random.default_rng(3)); X2, Y2 = mo.sample(5000, np.random.default_rng(3))
-        dd = np.abs(den(X1, Y1) - mo.density(X2, Y2)).max()
-        print(f"{scen}: d_Y=2 sample identical: {np.array_equal(X1, X2) and np.array_equal(Y1, Y2)}, max density diff {dd:.1e}")
+        print(scen)
         for dY in (2, 3):
             mo = Model(scen, dY); x = np.random.default_rng(5).uniform(size=(4, 3))
             ZZ = mo.box_mass(x)
@@ -1486,14 +1508,14 @@ def selftest():
                   f"int of truncated density {np.round(integ, 3)}")
     # 4. llfast_batch.local_linear_fast with ydim = 3 against the direct implementation
     from llfast_batch import local_linear_fast
-    from sim_sdr import local_linear_sd
+    from llfast import local_linear_sd
     for dY in (2, 3):
         n = 3000; Xf = rng.uniform(size=(n, 3)); Yf = 0.5 * rng.standard_normal((n, dY))
         Z, L = crows(Xf, Yf, rng); sc = np.array([0.3] * 3 + [0.4] * dY)
         E = np.vstack([np.hstack([np.repeat(rng.uniform(size=(3, 3)), 500, 0), rng.uniform(-2, 2, (1500, dY))]),
                        np.hstack([rng.uniform(size=(500, 3)), rng.uniform(-2, 2, (500, dY))])])
         a1 = local_linear_fast(Z, L, E, sc, list(range(3 + dY)), ydim=dY)[0]; a2 = local_linear_sd(Z, L, E, sc, list(range(3 + dY)))[0]
-        print(f"local_linear_fast(ydim={dY}) vs sim_sdr.local_linear_sd: max abs diff {np.abs(a1 - a2).max():.1e}")
+        print(f"local_linear_fast(ydim={dY}) vs llfast.local_linear_sd: max abs diff {np.abs(a1 - a2).max():.1e}")
     # 5. proposal density integrates to one
     for dY in (2, 3):
         mo = Model("hetero", dY); _, Yf = mo.sample(5000, np.random.default_rng(2))

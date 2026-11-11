@@ -24,7 +24,7 @@ sys.path.insert(0, HERE)
 import realdata_rank as RR
 import sim_rank as SR
 from sim_rank import BOX
-from sim_final import fit_mean_net
+from sim_rank import fit_mean_net
 
 assert SR.REF == "gmix", SR.REF
 seed = 0

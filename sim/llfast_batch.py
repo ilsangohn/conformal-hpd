@@ -1,4 +1,4 @@
-"""Batched-moment version of sim_sdr.local_linear_sd (estimate only; identical up to floating-point rounding).
+"""Batched-moment version of llfast.local_linear_sd (estimate only; identical up to floating-point rounding).
 
 Queries are grouped by their covariate x (the first d - ydim columns of E).
 
@@ -23,7 +23,7 @@ from scipy.spatial import cKDTree
 
 def local_linear_fast(C, L, E, scales, poly_cols, chunk=100000, ydim=2, band=480, tile=64, min_group=64,
                       max_elems=4_000_000, return_counts=False):
-    """Drop-in for sim_final.local_linear_sd(...)[0]; returns (est, None) (or (est, None, #neighbours)).
+    """Drop-in for llfast.local_linear_sd(...)[0]; returns (est, None) (or (est, None, #neighbours)).
 
     chunk      : queries per outer chunk (per-query moment arrays: ~100 doubles per query)
     band, tile : queries per y_1-band and per tile inside a band (large groups)

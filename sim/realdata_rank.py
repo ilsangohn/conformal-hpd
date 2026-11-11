@@ -4,10 +4,10 @@ conventions of sim_rank.py (whose functions are imported; md5 recorded in the ou
 usage: python realdata_rank.py SEED        one random split; JSON lines on stdout (one per method, then one "INFO" line)
        python realdata_rank.py selftest    unit tests
 
-Data and preprocessing: realdata.load(seed), unchanged: Y = (log(1 + casual + U1), log(1 + registered + U2)) with
+Data and preprocessing: realdata.load(seed): Y = (log(1 + casual + U1), log(1 + registered + U2)) with
 U ~ U(0,1) drawn afresh per split, each coordinate mapped affinely into [-2.5, 2.5] (0.1% and 99.9% quantiles over all
 hours to -2.25 and 2.25, clipped); X = (hour/23, temp, hum); 15 evaluation groups (5 hour blocks x 3 temperature
-terciles over all hours). The permutation is that of realdata.py (np.random.default_rng(seed + 1).permutation).
+terciles over all hours). The split permutes the hours by np.random.default_rng(seed + 1).permutation.
 
 Sizes (environment; defaults): the first N_A = 8000 permuted hours fit the base model of the two-stage and other
 auxiliary-step methods, the next N_REG = 3000 are the regression (auxiliary) points, and one-stage methods fit on these
@@ -67,7 +67,7 @@ from scipy.spatial import cKDTree
 HERE = os.path.dirname(os.path.abspath(__file__))
 if HERE not in sys.path:
     sys.path.insert(0, HERE)
-import realdata as RD                                   # load(seed): data, preprocessing, groups (unchanged)
+import realdata as RD                                   # load(seed): data, preprocessing, groups
 import sim_rank as SR
 from sim_rank import (crows, fit_net_tuned, eta2dens, rank_table, rank_eval, ll_weights_batch, ind_cv, h_fixed,
                       LP_HX, LP_HY, H_GRID, grid_edge, CellFit, CKDE, EtaFit)
@@ -380,9 +380,8 @@ def run(seed):
         return {"pgc": pgc, "poc": poc, "pgt": pgt, "pot": pot, "sc": sc, "st": st, "sg": sg, "t": t.dt}
 
     def ellipsoid(Xf, Yf):
-        from sim_final import fit_mean_net
         with Timer("fit_mean"):
-            mnet = fit_mean_net(Xf, Yf, seed)
+            mnet = SR.fit_mean_net(Xf, Yf, seed)
         res = Yf - mnet(Xf); tree = cKDTree(Xf)
         def prec_at(Xq, k=150):
             _, ii = tree.query(Xq, k=k); R = res[ii]; R = R - R.mean(1, keepdims=True)

@@ -1,8 +1,6 @@
 """Tables of the main experiment (Section 8 and app:numerics): run from the project root,
 python sim/make_tables_main.py [RESULT_ROOT].
 
-  tables/main_paired.tex                     one-stage conditional coverage error and the paired difference
-                                             two-stage - one-stage, per model and d_Y (main text)
   tables/main_{gaussian,multimodal,manifold}.tex   all methods, blocks d_Y = 2 and 5 stacked, with the volume ratio
                                              sum Leb(C_hat)/sum Leb(C*) over the random covariates (appendix)
   tables/main_samefit.tex                    one-stage on all fitting points, one-stage and two-stage with the same
@@ -10,8 +8,7 @@ python sim/make_tables_main.py [RESULT_ROOT].
 Data: main_data.load (results/main_n5k_matched and, for the Gaussian model, results/main_n5k_gaussrej; jobs with exit=0, SEEDS=a-b). Conditional coverage error
 = region-averaged, times 100; shape loss and volume relative to Leb(C*), averaged over the evaluation covariates.
 Two-stage = rank calibration with the isotropic frozen-target CV bandwidth (-RANKISO). Mean +- standard error over the
-replications; in main_paired a difference is set in bold when it lies more than two standard errors from zero (the
-verdict rule registered in results_main_n5k/README.md).
+replications.
 """
 import sys
 import numpy as np
@@ -63,30 +60,6 @@ def reps(keys, model=True):
 
 
 nrep = reps(list(COUNTS))
-
-# ---------------- main text: paired differences
-L = ["\\begin{table}[!t]",
-     f"\\caption{{Region-averaged conditional coverage error ($\\times100$) of one-stage calibration and the paired "
-     f"difference \\cref{{alg:local}} $-$ one-stage, mean $\\pm$ standard error over {nrep}. Bold: "
-     f"more than two standard errors from zero.}}\\label{{tab:paired}}",
-     "\\centering\\small", "\\begin{tabular}{llcccccc}", "\\toprule",
-     " & & \\multicolumn{2}{c}{NN} & \\multicolumn{2}{c}{LP} & \\multicolumn{2}{c}{partition}\\\\",
-     "\\cmidrule(lr){3-4}\\cmidrule(lr){5-6}\\cmidrule(lr){7-8}",
-     "model & $d_Y$ & one-stage & difference & one-stage & difference & one-stage & difference\\\\", "\\midrule"]
-for i, (name, disp) in enumerate(MODELS):
-    for j, d in enumerate(DYS):
-        R = cell(runs, name, d)
-        if not R:
-            continue
-        line = f"{disp if j == 0 else ''} & ${d}$"
-        for _, pre in EST:
-            line += f" & {pm([100 * cerr(r[pre]) for r in R], f2)} & " \
-                    f"{pm([100 * (cerr(r[pre + '-RANKISO']) - cerr(r[pre])) for r in R], f2, bold=True)}"
-        L.append(line + "\\\\")
-    if i < len(MODELS) - 1:
-        L.append("\\addlinespace[2pt]")
-L += ["\\bottomrule", "\\end{tabular}", "\\end{table}"]
-open("tables/main_paired.tex", "w").write("\n".join(L) + "\n")
 
 # ---------------- appendix: all methods, one table per model with the blocks d_Y = 2 and d_Y = 5 stacked
 for name, disp in MODELS:

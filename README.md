@@ -6,8 +6,8 @@ Code and results for the paper
 
 The code implements two-stage calibration of highest-density predictive sets (Algorithm 1 of the paper), one-stage
 calibration (HPD-split) and the baselines of the numerical experiments, and it reproduces every table and figure of the
-paper and its supplement. It uses only NumPy, SciPy and Matplotlib (tested with Python 3.11, NumPy 1.23, SciPy 1.11 and
-Matplotlib 3.8).
+paper and its supplement. It uses NumPy, SciPy, Matplotlib and PyTorch (CPU; for the neural network estimates), and was
+tested with Python 3.11, NumPy 1.23, SciPy 1.11 and Matplotlib 3.8.
 
 ## Layout
 
@@ -58,8 +58,13 @@ Notes on the saved results:
   thresholds from the main result files (`TAU_FILE` in `scripts/run_curves.sh`).
 - For the bike-sharing table, the partition rows of two-stage (quantile) come from the partition-only runs in
   `results/bike_1031_cellrcp`; the current `sim/realdata_rank.py` also writes this row in a full run.
-- Some modules (`sim_cov.py`, `sim_final.py`, `sim_robust.py`, `sim_sdr.py`, `sim_local.py`, `sim_gauss.py`, `llfast.py`) are
-  imported for shared helpers and contain code of earlier experiments that the paper does not use.
+- The result files keep only the rows that the tables and figures of the paper use. The scripts also write rows that
+  the paper does not report (two-stage calibrations with fixed or differently tuned bandwidths; for the bike data also
+  one-stage calibration on the base sample and a kernel density estimate), which were removed from the saved files;
+  regenerating the tables and figures from the saved files gives the files in `tables/` and `figures/`.
+- After the runs, helper functions of earlier modules were moved into `sim_rank.py`, `llfast.py` and `realdata.py`
+  without changing the computations (the samples, data splits and estimates are identical), so the `md5_sim_rank`
+  recorded in the bike-sharing results refers to the version before this move.
 
 ## Data
 

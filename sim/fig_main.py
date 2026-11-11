@@ -1,7 +1,6 @@
 """Main experiment figures (Section 8): run from the project root, python sim/fig_main.py [RESULT_ROOT].
 
   figures/main_plane.pdf   conditional coverage error against shape loss, models in columns and d_Y in rows
-  figures/main_paired.pdf  paired differences two-stage - one-stage of the conditional coverage error, per replication
 Data: main_data.load (RESULT_ROOT/{gaussian,multimodal,manifold}/dY{2,5}/rank_*.jsonl, default
 results/main_n5k_matched and, for the Gaussian model, results/main_n5k_gaussrej; jobs with exit=0, SEEDS=a-b). Two-stage = rank calibration with the isotropic frozen-target CV
 bandwidth (-RANKISO). The dotted vertical line is the conditional coverage error of one-stage calibration (HPD-split) with the true density
@@ -124,32 +123,3 @@ frame(x2 - PAD, x2 - PAD + W2, "other methods")
 plt.savefig("figures/main_plane.pdf", bbox_inches="tight", pad_inches=0.06)
 plt.savefig("figures/main_plane.png", dpi=160, bbox_inches="tight", pad_inches=0.06)
 plt.close(fig)
-
-# ---------------- paired differences two-stage - one-stage (x 100), one dot per replication
-fig, axes = plt.subplots(1, 3, figsize=(6.2, 2.5), sharey=True)
-rows = [(name, d) for d in DYS for name, _ in MODELS]
-lab = {name: disp for name, disp in MODELS}
-for k, (fam, pre, title) in enumerate((("NN", "HPD-NN", "NN"), ("LP", "HPD-LP", "LP"), ("cell", "CELL", "partition"))):
-    ax = axes[k]
-    for j, (name, d) in enumerate(rows):
-        R = cell(name, d)
-        if not R:
-            continue
-        dif = 100 * np.array([cerr(r[pre + "-RANKISO"]) - cerr(r[pre]) for r in R])
-        y = len(rows) - 1 - j
-        jit = (np.arange(len(dif)) - (len(dif) - 1) / 2) * 0.05
-        ax.plot(dif, y + jit, ls="none", marker="o", ms=2.4, color=FAMC[fam]["one"], alpha=0.8, mew=0, zorder=3)
-        if len(dif) > 1:
-            se = dif.std(ddof=1) / np.sqrt(len(dif))
-            ax.plot([dif.mean() - 2 * se, dif.mean() + 2 * se], [y, y], color=FAMC[fam]["edge"], lw=1.0, zorder=4)
-        ax.plot(dif.mean(), y, ls="none", marker="D", ms=4.2, color=FAMC[fam]["two"], mec=FAMC[fam]["edge"], mew=0.6, zorder=5)
-    ax.axvline(0, color="0.4", lw=0.6, zorder=1)
-    ax.axhline(len(MODELS) - 0.5, color="0.8", lw=0.5, zorder=0)
-    ax.set_title(title); ax.tick_params(length=2.5, pad=1.5)
-axes[0].set_yticks(range(len(rows)))
-axes[0].set_yticklabels([f"{lab[n]}, $d_Y={d}$" for n, d in rows][::-1])
-axes[1].set_xlabel(r"two-stage $-$ one-stage, conditional coverage error ($\times100$)")
-plt.tight_layout(w_pad=1.4)
-plt.savefig("figures/main_paired.pdf", bbox_inches="tight", pad_inches=0.06)
-plt.savefig("figures/main_paired.png", dpi=160, bbox_inches="tight", pad_inches=0.06)
-print("seeds per cell:", {f"{n}{d}": len(cell(n, d)) for n, d in rows})

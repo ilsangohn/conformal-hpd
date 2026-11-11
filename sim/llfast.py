@@ -1,6 +1,35 @@
-"""Batched (vectorized) version of sim_sdr.local_linear_sd with identical output."""
+"""Local linear estimates of the contrastive regression: the direct implementation local_linear_sd and its batched
+(vectorized) version local_linear_sd_fast with identical output; conditional KDE (ckde_grouped)."""
 import numpy as np
 from scipy.spatial import cKDTree
+
+
+def local_linear_sd(C, L, E, scales, poly_cols):
+    """Direct local linear estimate with product Epanechnikov weights and its standard error (one query at a time)."""
+    Cs, Es = C / scales, E / scales
+    tree = cKDTree(Cs)
+    nb_all = tree.query_ball_point(Es, r=1.0, p=np.inf, workers=int(__import__("os").environ.get("KD_WORKERS", "1")))
+    p_dim = 1 + len(poly_cols)
+    est = np.empty(len(E)); sd = np.empty(len(E))
+    for i, nb in enumerate(nb_all):
+        if len(nb) < 3 * p_dim:
+            if not nb:
+                est[i], sd[i] = 0.0, 1.0
+                continue
+            w = np.prod(0.75 * (1 - (Cs[nb] - Es[i]) ** 2), axis=1)
+            est[i] = np.dot(w, L[nb]) / max(w.sum(), 1e-12)
+            e = min(max(est[i], 1e-3), 1 - 1e-3)
+            sd[i] = np.sqrt(np.sum(w**2) * e * (1 - e)) / max(w.sum(), 1e-12)   # local-constant (NW) s.e.
+            continue
+        D = Cs[nb] - Es[i]
+        w = np.prod(0.75 * (1 - D**2), axis=1)
+        F = np.hstack([np.ones((len(nb), 1)), C[nb][:, poly_cols] - E[i, poly_cols]])
+        G = F.T @ (F * w[:, None]) + 1e-8 * np.eye(p_dim)
+        ell = np.linalg.solve(G, (F * w[:, None]).T)[0]      # equivalent weights
+        est[i] = ell @ L[nb]
+        e = min(max(est[i], 1e-3), 1 - 1e-3)
+        sd[i] = np.sqrt(np.sum(ell**2) * e * (1 - e))
+    return est, sd
 
 
 def local_linear_sd_fast(C, L, E, scales, poly_cols, chunk=4000, workers=1):
@@ -50,7 +79,7 @@ def _groups(Ex):
 
 
 def local_linear_grouped(C, L, E, scales, poly_cols, dx=3):
-    """Exact local linear (same output as sim_sdr.local_linear_sd) for query sets in which many rows share x.
+    """Exact local linear (same output as local_linear_sd) for query sets in which many rows share x.
     For each distinct x, the x-window rows are found once and all y-queries are solved via moment sums."""
     assert list(poly_cols) == list(range(C.shape[1]))
     Ex, Ey = E[:, :dx], E[:, dx:]
